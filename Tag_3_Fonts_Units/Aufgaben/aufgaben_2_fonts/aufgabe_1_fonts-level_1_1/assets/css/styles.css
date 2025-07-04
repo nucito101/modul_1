@@ -1,0 +1,80 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+  --bg-color: #4FEBAC;
+  --p-color: #5C3CDC;
+}
+
+@font-face {
+  font-family: "Bitcount";
+  src: url(../fonts/Bitcount_Grid_Double/BitcountGridDouble-VariableFont_CRSV\,ELSH\,ELXP\,slnt\,wght.ttf);
+}
+
+@font-face {
+  font-family: "Dancing";
+  src: url(../fonts/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "noto_jp";
+  src: url(../fonts/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "noto_kr";
+  src: url(../fonts/Noto_Sans_KR/NotoSansKR-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url(../fonts/Roboto/Roboto-Italic-VariableFont_wdth\,wght.ttf);
+}
+
+body {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  margin: 5rem;
+}
+p {
+  padding: 1rem;
+}
+
+body h1 {
+  background-color: var(--p-color);
+  padding: 0.5rem;
+  color: rgb(81, 179, 179);
+}
+
+body p:first-of-type {
+  font-family: "bitcount";
+}
+
+body p:nth-of-type(2) {
+  font-family: "dancing";
+  background-color: var(--bg-color);
+}
+
+body p:nth-of-type(3) {
+  font-family: "noto_jp";
+  font-style: italic;
+} 
+
+body p:nth-of-type(4){
+  font-family: "noto_kr";
+}
+
+body p:nth-of-type(5){
+  font-family: "roboto";
+  background-color: var(--p-color);
+}

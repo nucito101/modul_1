@@ -1,0 +1,55 @@
+div {
+  padding: 20px;
+  border: 10px solid rebeccapurple;
+  width: 50%;
+}
+
+/* # groesse orientiert sich nur am CONTENT border und Innenabstand werden hinzugerechnet!! deswegen ist es insgesamt dann mehr als 50%*/
+/* $ box-sizing => standartmeassig auf content box gestellt!!! */
+/* $ wir koennen uns helfen indem wir IMMER box-sizing auf border-box stellen => rand und innenabstand wird mit eingerechnet*/
+
+/* ? Der Sternselektor selektiert alle Elemente in unserem Document */
+/* ! unser Reset! schaut auch fast immer so aus! immer diese 3 werte. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  background-color: red;
+  height: 300px;
+  width: 300px;
+  border: 10px solid peachpuff;
+}
+
+/* margin: 10px; */
+/* ? wichtig: padding und margin gehen im uhrzeigersinn startend mit top */
+/* das gleiche wie -> margin: 10px 10px 10px 10px; */
+
+/* margin-top: 10px; */
+/* margin-right: 10px; */
+/* margin-bottom: 10px; */
+/* margin-left: 10px; */
+
+/* ? startend mit: top - bottom, und dann left - right */
+/* margin: 20px 30px */
+
+div:nth-of-type(1) {
+  padding: 20px 40px;
+  /* margin: auto; zentriert elemente horizontal */
+  margin: auto;
+}
+
+div {
+  margin-bottom: 30px;
+}
+
+section p {
+  background-color: lightblue;
+  color: black;
+  margin: 20px;
+  display: inline-block;
+  height: 400px;
+  width: 300px;
+}

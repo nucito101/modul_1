@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "chelsea";
+  src: url(../fonts/Chelsea_Market/ChelseaMarket-Regular.ttf);
+}
+
+@font-face {
+  font-family: "fredoka";
+  src: url(../fonts/Fredoka/Fredoka-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+  font-family: "pacifico";
+  src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+
+@font-face {
+  font-family: "press_start";
+  src: url(../fonts/Press_Start_2P/PressStart2P-Regular.ttf);
+}
+body {
+  width: 50%;
+  margin: 2rem;
+}
+
+body h1 {
+  font-size: 3rem;
+  background-color: greenyellow;
+  font-family: "press_start";
+  text-align: center;
+}
+
+h1 span {
+  font-family: "fredoka";
+  margin: 0.2em;
+
+}
+
+p {
+  font-family: "pacifico";
+  margin: 2rem auto;
+  line-height: 2rem;
+}
+
+p em{
+  text-shadow: 1px 1px 3px red;
+}
+
+body a {
+  font-family: "chelsea";
+  text-decoration: solid;
+  font-size: .8rem;
+}
+
+p strong {
+  font-size: .5rem;
+}

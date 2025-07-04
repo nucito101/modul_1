@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+section{
+  background-color: #a5d6a7;
+}
+
+section h1:first-of-type{
+  background-color: #4dd0e1;
+}
+
+section p:first-of-type{
+  background-color: #c5cae9;
+}
+
+article{
+  background-color: #f48fb1;
+}
+
+article h2:first-of-type{
+  background-color: #7986cb;
+}
+
+article p:first-of-type{
+  background-color: #ff8a65;
+}
+
+button{
+  background-color: #304ffe;
+  color: white;
+}
+

@@ -1,0 +1,90 @@
+<!-- Kommentare mit cmd + shift 7 anlegen-->
+<!-- Ausrufezeichen und tab legt das HTML grundgerüst an-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML INTRO</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- <a> ist das Kind von dem <nav> Element -->
+                <!-- Externer Link zu Google -->
+                <!-- jeder Element hat schon paar Eigenschaften oder auf Englisch Attribute -->
+            <a href="https://www.google.de/?hl=de">Der Link zu google</a>
+            <!-- interner Link zum About Seite innerhalb unserer Seite -->
+            <!-- relative pfad = Tag_1_HTML_Intro/Vormittags/assets/Pages/about.html ; hier das / nicht vergessen-->
+            <!-- absoluter pfad = /Users/supercoder/Library/Mobile Documents/com~apple~CloudDocs/webapp_2501/Tag_1_HTML_Intro/Vormittags/assets/Pages/about.html -->
+            <!-- mit ./ selber den pfad erstellen -->
+            <a href="/Tag_1_HTML_Intro/Vormittags/assets/Pages/about.html">About us</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <!-- h1, p sind Beispiele für Blockelement => sie nehmen die ganze Breite ein -->
+        <!-- a, button, input => sie nehmen nur den Platz bzw. die Breite ein, die sie benötigen -->
+        <h1>Überschrift 1</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias laboriosam veritatis eveniet, eligendi unde corporis iure nihil recusandae eius reiciendis!</p>
+        
+    </section>
+    <section>
+        <p>Lorem <b>ipsum</b> dolor sit <i>amet</i> consectetur adipisicing elit. <span>Dieser Text ist innerhalb eines span Elements</span>, ab? Et unde repellendus atque quo animi laborum ipsam corporis nisi porro quidem? Provident officiis inventore dolorem quo, velit amet laudantium vero vel et libero, dolores molestiae necessitatibus tempora vitae eveniet culpa blanditiis ad ullam accusantium assumenda. Illum voluptatibus nam, dolorem tenetur recusandae aliquid assumenda deserunt. Nisi in adipisci consequatur numquam possimus veniam alias officiis unde ipsum harum repudiandae cupiditate fuga, ratione, hic exercitationem quibusdam explicabo ullam nesciunt! Doloremque eos, eveniet minima nobis aspernatur obcaecati assumenda labore ab. Unde, provident perferendis? Qui, aspernatur nesciunt! Natus nulla quae ratione ducimus sint! Assumenda?
+        </p>
+
+    </section>
+    <!-- ungeorddtne Liste => <ul> -->
+        <ul>
+            <!-- li ist das Kindelement von dem ul Element -->
+            <!-- das shortcut li + * => li*4 -->
+            <!-- wie kann man gleichzeitig mitselektieren => erstmal auf ein Wort bzw Begriff klicken und dann => die Kombination => cmd + d -->
+        <li>unterelement 1</li>
+        <li>unterelement 2</li>
+        <li>unterelement 3</li>
+        <li>unterelement 4</li>
+        
+        </ul>
+        <!-- shortcut ul>li*8 -->
+        <!-- shortcut für in verschiedenen Stellen mitselektieren => klicken + option + nochmal je nach dem woanders klicken oder KOMBINATION => Option + shift + klicken -->
+        <ul>
+            <li>unterelemente 1</li>
+            <li>unterelemente 2</li>
+            <li>unterelemente 3</li>
+            <li>unterelemente 4</li>
+            <li>unterelemente 5</li>
+            <li>unterelemente 6</li>
+            <li>unterelemente 7</li>
+            <li>unterelemente 8</li>
+        </ul>
+        <!-- geordnete Liste -->
+        <ol>
+        <li>unterelement 1</li>
+        <li>unterelement 2</li>
+        <li>unterelement 3</li>
+        <li>unterelement 4</li>
+        </ol>
+        <!-- Bild bzw img -->
+        <article>
+            <!-- Bild aus dem Unterordner  -->
+            <h3>Das ist ein Bild von Totoro</h3>
+            <img src="./assets/img/Totoro.jpeg" alt="Totoro Bild">
+        </article>
+        <article>
+            <!-- Bild über URL Link einbinden -->
+            <h3>Ein zufäliges Bild</h3>
+            <img src="https://picsum.photos/200/300" alt="Random Bild">
+        </article>
+    </main>
+    <footer>
+        <p>SuperCode GmbH</p>
+        <!-- Attribute target ermöglicht dass ein neues Tab geööfnet wird, sobald man auf den Link klickt -->
+        <a href="https://www.super-code.de" target="_blank">SuperCode Seite</a>
+        <!-- die Voraussetzung dafür ist dass man tel oder mailto + ":" schreibt -->
+        <a href="tel:+4912345678">Ruf mich bitte an</a>
+        <a href="mailto:lorem@gmail.com">Schreib mir eine Mail</a>
+    </footer>
+</body>
+
+</html>

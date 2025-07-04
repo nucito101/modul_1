@@ -1,0 +1,168 @@
+/* Bitte immer am anfang alles bzw alle elemente auf 0 setzen in bezug auf margin und padding */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  /* user root verzeichnis */
+  font-size: 16px;
+  /* font-size: 62.5%; ergibt 10px */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* :root ist wie ein Lagerhaus und mann kann einfach bestimmte Eigenschaften da auslagern unm wieder mal wieder zu benutzen */
+:root{
+  --header_h2-color: #ff1155;
+  --width: 400px;
+  --bg-color-yellow: rgb(253,152,0);
+  --p-color: rgb(202, 31, 60); 
+}
+
+/* !Schriften einbinden */
+/* !keyword => font-face */
+
+@font-face{
+  font-family: "Caveat-Variable";
+  src: url(../fonts/Caveat/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face{
+  font-family: "Tiny-pizza";
+  src: url(../fonts/Caveat/static/Caveat-Regular.ttf);
+}
+
+header{
+  /* das ist korrekt aber es gibt dafür noch ein Shortcuts */
+  /* margin-top: 50px;
+  margin-bottom: 50px; */
+margin: 50px auto;
+}
+
+/* !schrift anwenden */
+
+header h1 {
+  font-family: "caveat-Variable", sans-serif;
+  font-size: 70px;
+  text-decoration: underline;
+  /* text-align wird verwendet um die horizentale Ausrichtung von text in einem Elemnt zusteuern */
+  text-align: center;
+  color: tomato;
+  margin-bottom: 50px;
+}
+
+header p {
+  border: 2px solid yellow;
+  font-family: "tiny-pizza";
+  /* wie verwende ich diese ausgelagerte Farbe oder bzw die Variable von :root, indem man die Methode var() benutzt wird */
+  color: var(--p-color);
+  font-weight: 900;
+  text-align: right;
+  /* letter-spacing: 10px; */
+  word-spacing: 10px;
+  /* default ist nach jedem Wort, bricht nach jedem Buchstaben um, wenn man mit break-all arbeitet */
+  word-break: break-all;
+}
+
+main{
+  background-color: hotpink;
+}
+
+main article{
+  padding: 40px 60px;
+  margin: 20px auto;
+  border: 3px solid green;
+  width: 700px;
+  background-color: yellow;
+}
+
+main article h2 {
+  color: blue;
+  border: 1px dashed blue;
+  text-align: center;
+  display: inline;
+}
+
+.box {
+  width: var(--width);
+  height: 100px;
+  background-color: var(--bg-color-yellow);
+}
+
+/* !relative Einheit */
+
+/* % prozent bezieht sich immer auf den Elterncontainer, es bezieht sich also auf die größe des elements selbst*/
+
+.relative_container-percent{
+  border: 2px solid green;
+  width: 500px;
+}
+
+.container{
+  width: 50%;
+}
+
+img{
+  width: 100%;
+  display: block;
+}
+
+/* "VH & VW" Viewport einheit */
+/* Vh und vw sind zwei frechdachse und hängen nicht von elternelemnt, sondern von dem Bereich des Browserfensters ab alos Viewpoint*/
+
+.box1 {
+  text-align: center;
+  padding: 50px;
+  color: white;
+  width: 100vw;
+  height: 20vh;
+  border: 2px solid white;
+}
+
+.box2 {
+  text-align: center;
+  padding: 100px;
+  color: white;
+  width: 50vw;
+  height: 50vh;
+  background-color: limegreen;
+}
+
+/* "em & rem" Viewport einheit */
+/* ? em bezieht sich immer auf die Schriftgröße des dirket obergeordnetem Elemnts */
+
+.em__font-size {
+  /* elternelement */
+  font-size: 16px;
+}
+
+.larger {
+  font-size: 1.5em; 
+/* ? 1.5em wird im Hintergrund ungefähr als 24px gerechnet */
+}
+
+/* ? Rem bezieht sich immer auf den Root oder beser gesagt html */
+
+.even-larger {
+  font-size: 2rem;
+}
+
+/* $ Clamp einheit */
+
+.content {
+  margin: 5rem auto;
+  width: 500px;
+  background-color: yellow;
+}
+
+span {
+  color: rgb(162, 12, 162);
+  font-weight: 900;
+}
+
+.text {
+  color: rgb(41, 162, 63);
+  /* diese methode kriegt von uns drei paramete und zwaar min, standert, mac als werten */
+  font-size: clamp(2rem, 5vw, 5rem);
+}

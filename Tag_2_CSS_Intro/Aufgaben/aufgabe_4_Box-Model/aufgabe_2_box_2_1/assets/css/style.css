@@ -1,0 +1,58 @@
+*{
+  box-sizing: border-box;
+}
+
+section{
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1{
+  border: 2px dashed black;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+p{
+  border: 2px solid orange;
+  color: purple;
+  padding: 20px;
+  margin: 40px 0;
+}
+
+p:hover:first-letter{
+  color: red;
+}
+
+ol, ul{
+  border: 2px dotted green;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+li{
+  border-bottom: 1px solid green;
+  margin: 10px;
+}
+
+h2 {
+  display: block;
+  width: fit-content;
+  margin: 40px auto;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: 1px solid grey;
+  box-shadow: 5px 5px 5px 5px lightgray;
+}
+
+h3 {
+  display: block;
+  width: fit-content;
+  margin: 40px auto;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: 10px double lightgreen;
+}

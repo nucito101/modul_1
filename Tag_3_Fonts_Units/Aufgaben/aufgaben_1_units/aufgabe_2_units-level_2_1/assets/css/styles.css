@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+.pets {
+  font-size: 1.2rem;
+  padding: 2rem 4rem;
+  border: 2px solid black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+.dog li {
+  list-style: '🐶 ';
+}
+
+.cat li {
+  list-style: '🐱 ';
+}
+
+.parrot li {
+  list-style: '🦜 ';
+}
+
+.snake li {
+  list-style: '🐍 ';
+}
+
+.lizard li {
+  list-style: '🦎 ';
+}

@@ -1,0 +1,57 @@
+/*# Einfache Selektoren:*/
+/* Auswahl aller Elemente eines bestimmten Typs (z.B. p, h1, div) */
+p {
+  color: darkslategray;
+}
+
+/* # Kombinatoren */
+/* ? super erklaert + Bsp: https://kulturbanause.de/blog/css-selektoren/ */
+
+/* $ Kindselektor > */
+/* Der Kindselektor wählt alle direkten Kindelemente vom Elternelement  aus. */
+
+/* $ Nachfahrenselektor leerzeichen */
+/* Der Nachfahrenselektor wählt alle Nachfahren aus, die innerhalb des Elements vorkommen. */
+
+/* $ Nachbarselektor + */
+/* Der Nachbarselektor wählt den Nachbarn  nur dann aus, wenn er direkt auf das Element folgt, also der direkte Nachbar ist*/
+
+/* $ Geschwisterselektor ~  opt n */
+/* Der Geschwisterselektor spricht alle nachfolgenden Geschwister vom Element an die auf der gleichen Ebene wie das Element liegen. */
+
+/* #Pseudo-Klassen  */
+/* Was sind Pseudo Klassen? */
+/* Ermöglichen die Auswahl von Elementen basierend auf ihrem Zustand oder ihrer Position
+Beispiele: */
+
+/* :hover -> Mauszeiger ueber einem Element */
+/* :active -> Element wird angeklickt */
+/* :first-child, :last-child, :nth-child(), ... */
+
+/* ? Nimmt das letzte Element von der Gruppe */
+article ul li:last-child {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+/* ? Nimmt das letzte Element vom jeweiligen Typen. In diesem Fall die h2 */
+h2:last-of-type {
+  color: red;
+}
+
+/* ? Nimmt das erste Element vom jeweiligen Typen. In diesem Fall die h2 */
+h2:first-of-type {
+  color: blue;
+}
+
+/* ? Nimmt ALLE child-elemente die sich auf das Element beziehen! -> eltern-element existiert oefters -> dann werden alle angesprochen! */
+ul li:nth-of-type(1) {
+  color: orange;
+}
+
+span {
+  border: 1px solid red;
+  height: 30px;
+  width: 200px;
+  display: inline-block;
+}

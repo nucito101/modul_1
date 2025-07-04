@@ -1,0 +1,27 @@
+a{
+  color: red;
+}
+
+nav{
+  background-color: grey;
+  padding-left: 40px;
+}
+
+span{
+  color: red;
+}
+
+.bild1{
+  width: 400px;
+  height: 400px;
+}
+
+.bild2{
+  width: 600px;
+  height: 600px;
+}
+
+.bild3{
+  width: 800px;
+  height: 600px;
+}
