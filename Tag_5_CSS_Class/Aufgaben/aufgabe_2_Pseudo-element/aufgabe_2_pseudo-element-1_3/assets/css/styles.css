@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --first-letter-color: #00796b;
+  --first-letter-hover-color: #4fc3f7;
+}
+
+body {
+  padding: 2em;
+}
+
+h1::first-letter {
+  color: var(--first-letter-color);
+  font-size: 3em;
+}
+
+h1:hover::first-letter {
+  color: var(--first-letter-hover-color);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1em;
+}
+
+li {
+  font-size: 1.2em;
+  margin-left: 50px;
+  max-width: 500px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.inprogress {
+  background-color: var(--first-letter-hover-color);
+}
+
+.futuretask {
+  text-decoration: underline;
+}
+
+li::before,
+li::after {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+li:before {
+  margin-right: 10px;
+}
+
+li:after {
+  margin-left: 10px;
+}
+
+.completed::before {
+  content: "";
+  background-image: url(../img/check.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.inprogress::before {
+  content: "";
+  background-image: url(../img/doing.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.futuretask::before {
+  content: "";
+  background-image: url(../img/no.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+li:nth-of-type(1)::after {
+  content: url(../img/gym.png);
+}
+
+li:nth-of-type(2)::after {
+  content: url(../img/bill.png);
+}
+
+li:nth-of-type(3)::after {
+  content: url(../img/dance.png);
+}
+
+li:nth-of-type(4)::after {
+  content: url(../img/eat.png);
+}
+
+li:nth-of-type(5)::after {
+  content: url(../img/book.png);
+}
+
+li:nth-of-type(6)::after {
+  content: url(../img/organize.png);
+}

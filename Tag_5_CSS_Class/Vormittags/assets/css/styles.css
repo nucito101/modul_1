@@ -1,0 +1,175 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+/* ! :root ist ein spezieller Pseudo-selektor im Css, der das höchste Element des Dokuments auswählt. In Html Dokumenten entspricht dies dem html Element */
+:root {
+  --primary-color: #349db3;
+  --font-size: 16px;
+  --margin-bottom: 100px;
+}
+
+header {
+  padding: 50px;
+  font-size: 2rem;
+}
+
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 7rem;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+header p:nth-of-type(2) {
+  margin-bottom: 50px;
+}
+
+/* fokos auf Pseudo elements */
+
+header p::first-letter, h1::first-letter {
+  color: red;
+  font-size: 30px;
+}
+
+/* ? ::marker */
+/* Funktioniert nur bei den Li-Elementen da nur sie die Markerbox haben */
+
+li::marker {
+  font-family: "Font Awesome 6 Free";
+  content: "\f256";
+  font-size: 20px;
+  color: green;
+  margin-right: 20px;
+}
+
+/* ? ::before */
+
+.hamburger {
+  /* ! ganz wichtig! bei arbeiten mit before und after (wenn content angezeigt werden soll) die "content property nicht vergessen  */
+  top: 50%;
+  left: 50%;
+  content: "";
+  width: 30px;
+  height: 6px;
+  background-color: black;
+  position: relative;
+}
+
+.hamburger::before {
+  top: -16px;
+  width: 30px;
+  height: 6px;
+  content: "";
+  background-color: black;
+  position: absolute;
+}
+
+.hamburger::after {
+  top: 16px;
+  width: 30px;
+  height: 6px;
+  content: "";
+  background-color: black;
+  position: absolute;
+}
+
+section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+section h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  width: 45vw;
+  margin: 0 auto 5% auto;
+}
+
+section h2::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f256";
+
+  /* Bei inline block müsst ihr unbedingt auf umliegende elemente achten, meistens overlapped */
+
+  /* display: inline-block;
+  background-color: aquamarine;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px; */
+} 
+
+section h2::after {
+  font-family: "Font Awesome 6 free";
+  content: "\f256";
+  margin-left: 10px;
+  color: blueviolet;
+}
+
+section:nth-of-type(1) p {
+  display: inline-block;
+  padding 20px;
+  border-radius: 10px;
+  border: 1px solid pink;
+  font-size: 50px;
+}
+
+section:nth-of-type(1) p:hover {
+  cursor: pointer;
+  border: 2px dotted yellowgreen;
+  color: yellowgreen;
+}
+
+
+/* Fokus auf Background  */
+
+/* 
+bg-color
+bg-img
+bg-size
+bg-position
+bg-repeat
+ */
+
+#backgroundImg {
+  background-image: url(https://plus.unsplash.com/premium_photo-1681666713728-9ed75e148617?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  /* ! hier könnt ihr mit ALLEN * arbeiten, WÖERTER, hexcode, rgb, rgba, hsl, varetc.... */
+  background-color: #e4a2a2;
+  height: 80vh;
+  /* bild nimmt die komplette fläche des Elternelemnts ein, wird ggf zugeschnitten  */
+  background-size: cover;
+   /* bild nimmt die komplette fläche ein die es benötigt um zu komplett zu existieren, kann sein dass whitespace über bleibt */
+  /* background-size: contain; */
+
+  /* erster wert links/rechtts, Zweiter wert oben/unten */
+  background-size: 10% 20%;
+
+  /* bild wird nicht wiederholt */
+  background-repeat: no-repeat;
+
+  /* postionen */
+  background-position: top right;
+  background-position: 25% 75%;
+  background-position: bottom 50px right 100px;
+
+  /* zweibilder 
+  /* background-image: url("https://plus.unsplash.com/premium_photo-1681666713728-9ed75e148617?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"), url("https://images.unsplash.com/photo-1743456056112-0739a6742135?q=80&w=1422&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: top left, bottom right;
+  background-size: 20%, 10%;
+  background-repeat: no-repeat, no-repeat; */
+
+  /* linear gradient */
+  /* background-image: linear-gradient(45deg,blue,red);
+  background-image: linear-gradient(to left top,blue,red); */
+
+  linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
