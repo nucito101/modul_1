@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 3vh;
+}
+
+fieldset {
+  padding: 5px;
+}
+
+legend {
+  padding: 10px 5px;
+  font-size: 1.2rem;
+}
+
+section {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+label,
+.checkbox_section p {
+  display: inline-block;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.gender_section p {
+  display: inline-block;
+  margin-left: 10px;
+  max-width: 135px;
+  width: 100%;
+}
+
+.gender {
+  display: flex;
+  width: fit-content;
+  max-width: 4.5rem;
+  padding: 0 5px;
+  gap: 3px;
+}
+
+.gender:nth-of-type(1) {
+  max-width: 3.5rem;
+}
+
+section input[type="text"],
+section input[type="email"]
+/* section select  */ {
+  width: 250px;
+  display: inline-block;
+  align-items: flex-start;
+}
+
+input[type="file"] {
+  width: 300px;
+  margin-left: 0;
+}
+
+.fieled {
+  display: flex;
+  align-items: center;
+  width: 5rem;
+  gap: 3px;
+}
+
+.fieled:nth-of-type(1) {
+  width: 3rem;
+}
+
+.select_language_section select {
+  width: 4rem;
+}
+
+.select_language_section p {
+  display: inline;
+  margin-top: 50px;
+  margin-left: 4px;
+  font-size: 1em;
+}
+
+.btn_section {
+  display: flex;
+  margin-left: 10px;
+  gap: 5px;
+  cursor: pointer;
+}
+
+button {
+  font-size: 1.05rem;
+}

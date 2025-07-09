@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Register form</legend>
+        <section class="text-name_section">
+          <label for="name">Name</label>
+          <input type="text" name="" id="name" placeholder="Name" />
+        </section>
+
+        <section class="text-surname_section">
+          <label for="surname">Surname</label>
+          <input type="text" name="" id="surname" placeholder="Surname" required />
+        </section>
+
+        <section class="email_section">
+          <label for="mail">Email</label>
+          <input type="email" name="" id="mail" placeholder="Email" />
+        </section>
+
+        <section class="gender_section">
+          <p>Gender</p>
+          <div class="gender">
+            <label for="male">Male</label>
+            <input type="radio" name="auswahl" id="male" />
+          </div>
+
+          <div class="gender">
+            <label for="female">Female</label>
+            <input type="radio" name="auswahl" id="female" />
+          </div>
+
+          <div class="gender">
+            <label for="divers">Divers</label>
+            <input type="radio" name="auswahl" id="divers" />
+          </div>
+        </section>
+
+        <section class="file_section">
+          <div>
+            <label for="file">Picture</label>
+            <input type="file" name="" id="file" />
+          </div>
+        </section>
+
+        <section class="select_country_section">
+          <label for="country">Country</label>
+          <select name="" id="country">
+            <option value="de">Germany</option>
+            <option value="fr">France</option>
+            <option value="us">USA</option>
+          </select>
+        </section>
+
+        <section class="select_language_section">
+          <label for="language">Preferred languages</label>
+          <select name="" id="language" multiple size="4">
+            <option value="l_html">HTML</option>
+            <option value="l_css">CSS</option>
+            <option value="l_js">JS</option>
+            <option value="l_react">React</option>
+          </select>
+          <p>(To choose more than one use cmd key)</p>
+        </section>
+
+        <section class="checkbox_section">
+          <p>Fieled of activity</p>
+          <div class="fieled">
+            <input type="checkbox" name="" id="it" value="it" />
+            <label for="it">IT</label>
+          </div>
+
+          <div class="fieled">
+            <input type="checkbox" name="" id="design" value="design" />
+            <label for="design">Design</label>
+          </div>
+
+          <div class="fieled">
+            <input type="checkbox" name="" id="other" value="other" />
+            <label for="other">Other</label>
+          </div>
+        </section>
+        <section class="btn_section">
+          <button type="submit">Send</button>
+          <button type="reset">Cancel</button>
+        </section>
+      </fieldset>
+    </form>
+  </body>
+</html>

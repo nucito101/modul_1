@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ! Form => wir benötigen <form> tag, wenn ein HTML Formular erstellt wird
+  Attribute => Das action attribute verweist auf eine URL bzw an das Backend oder besser gesagt an den den Datenbank-->
+
+    <!-- ! diese Dateien verarbeitet werden gespeichert und bei bedarf sendet eine Antwort -->
+    <!-- ! dieser Prozess ist nicht wie eine Einbahnstraße, weil eine Form bei bedarf noch eine Antwort vom Backend bekommen kann  -->
+
+    <form action="">
+      <!-- fieldset wird verwendet um eine logische grupierung vonelementen zu erstellen -->
+      <fieldset>
+        <legend>Label und Input</legend>
+        <!--===== input =======-->
+        <!-- es gibt verschiedene INPUT types => text, color, number, tel, mail, radio, password, checkbox, select -->
+
+        <!-- !ein Input Element wird immer mit einem andren Element zusammen verwendet und zwar label, anders gesagt sie sind wie geschwister -->
+
+        <!-- % das is-attribut wird verwendet, um ein HTML-Element eindeutig zu identifizieren -->
+
+        <!-- % Es ist sehr nützlich, um eine Verbindung zwischen einem label und einem input Element herzustellen -->
+
+        <!-- + Input Text -->
+        <section class="text__section">
+          <label for="text">gib hier einen text ein</label>
+          <input type="text" name="" id="text" placeholder="dein text" />
+        </section>
+
+        <!-- + Input number -->
+        <section class="number__section">
+          <label for="number">Gib mir eine Zahl ein</label>
+          <input type="number" name="" id="number" />
+        </section>
+
+        <!-- atribute wie placeholder, disable, required-->
+
+        <!--  Das attribut disabled ist ein boolesches Attribut -->
+        <!-- wenn es vorhanden ist, gibt es an, dass das Element deaktiviert werden soll, ein diaktiviertes Element ist unbrauchbar -->
+
+        <!-- wenn ein oder mehrere Bedingungen erfüllt sind, dann könnte über js den deaktivierten Wert entfernen und das Element wieder nutzbar machen -->
+
+        <!-- + input telefonnummer -->
+
+        <section class="telefon__section">
+          <label for="telefon">Gib mal deine Handynummer ein</label>
+          <input type="tel" name="" id="telefon" placeholder="Telefonnummer" />
+        </section>
+
+        <!-- das attribut required erzwingt den User, dass er unbedingt dieses Element ausfüllen sollte -->
+
+        <!-- + Input email -->
+
+        <section class="email__section">
+          <label for="mail">Meine Mail</label>
+          <input type="email" name="" id="mail" required />
+        </section>
+
+        <!-- ! Die Attribute for und id können sogar ausgedachte Wörte sein, hauptsache was sinnhaftes -->
+
+        <!-- + Input password -->
+
+        <section class="password__section">
+          <label for="password">Passwort</label>
+          <input type="password" name="" id="password" placeholder="gibt mal dein Kennwort ein" />
+        </section>
+
+        <hr />
+        <!-- + input radio -->
+        <section class="radio__section">
+          <h3>habe ich genügend Geld für meinen Urlaub</h3>
+          <div>
+            <input type="radio" name="auswahl" id="ja" />
+            <label for="ja">Ja</label>
+          </div>
+
+          <div>
+            <input type="radio" name="auswahl" id="nein" />
+            <label for="nein">nein</label>
+          </div>
+
+          <div>
+            <input type="radio" name="auswahl" id="vielleicht" />
+            <label for="vielleicht">vielleicht</label>
+          </div>
+
+          <!-- die verwendung desselben name-Attribute bei radio-buttons einer Mehrfachauswahl sorgt dafür, dass sie alle zusammengehörige gruppe erkannt werden -->
+          <!-- nur eine Option darf ausgewählt werden -->
+        </section>
+
+        <hr />
+        <!-- + input Checkbox & select -->
+
+        <!-- jede checkbox hat ein Value- Attribute., das den Wert dafiniert, der an den Server gesendet wird, wenn die Checkbox ausgewählt ist -->
+        <section>
+          <h3>Ich Packe meinen Koffer...</h3>
+          <div>
+            <input type="checkbox" name="" id="hose" value="hose" />
+            <label for="hose">Hose</label>
+          </div>
+
+          <div>
+            <input type="checkbox" name="" id="shirt" value="shirt" />
+            <label for="shirt">Shirt</label>
+          </div>
+
+          <div>
+            <input type="checkbox" name="" id="schuhe" value="schue" />
+            <label for="schuhe">Schuhe</label>
+          </div>
+
+          <div>
+            <input type="checkbox" name="" id="snacks" value="snacks" />
+            <label for="snacks">Snacks</label>
+          </div>
+
+          <div>
+            <input type="checkbox" name="" id="wasser" value="wasser" />
+            <label for="wasser">Wasser</label>
+          </div>
+        </section>
+        <!-- + Input select -->
+        <!--  das HTML Element Select wird verwendet, um ein Drop-Down Menü in einem Formular zu erstellen -->
+        <!-- select hat ein einzelnes kind als Element und zwar option -->
+
+        <section class="select__section">
+          <h4>Schöne Urlaubsorte</h4>
+          <div>
+            <!-- ? multiple mehrere Options aus dem Dropdown Menü auswählen aber dafür muss man die Taste-Kombinationation benutzen und zwar => command + klick -->
+            <!-- ? sie sind dadurch auch alle sichtbar -->
+            <!-- multiple attribute ist nur für Elemente wie Select email, file  -->
+            <!-- ? "size" wie viele Option gleichzeitig sichtbar sein soll -->
+            <label for="countries">meine Reiseziele...</label>
+            <select name="" id="countries" multiple size="2">
+              <option value="kr">Kroation</option>
+              <option value="lk">Sri Lanka</option>
+              <option value="mg">Madagaskar</option>
+              <option value="tb">Timbuktu</option>
+            </select>
+          </div>
+        </section>
+
+        <hr />
+        <!-- + Input Date -->
+
+        <section class="date__section">
+          <h4>Wann fliege ich lis ?</h4>
+          <div><label for="date">Datum:</label></div>
+          <input type="date" name="" id="date" />
+        </section>
+
+        <!-- + Input textarea -->
+
+        <!-- textarea hat zwei Attribute und zwar col und row -->
+        <section class="range__section">
+          <div>
+            <label for="textarea">Erzähl mal deine Geschichte...</label>
+            <textarea name="" id="textarea" placeholder="Meine Geschichte" cols="30" rows="10"></textarea>
+          </div>
+        </section>
+
+        <!-- + input file  -->
+        <hr />
+        <section class="file__section">
+          <div>
+            <label for="file">Teile deine bilder mit uns</label>
+            <input type="file" name="" id="file" />
+          </div>
+        </section>
+
+        <!-- + Input range  -->
+
+        <section class="raange__section">
+          <div>
+            <label for="range">Hast du Lust? </label>
+            <input type="range" name="" id="range" />
+          </div>
+        </section>
+
+        <!-- +  Button -->
+        <!-- button Element hat offenen und schließenden Tag -->
+        <!-- button hat drei types und zwar
+ - submit
+ - reset
+ - submit -->
+        <section class="button__section">
+          <div>
+            <label for="happy_button">Bist du zu frieden ?</label>
+            <button id="ja__button">Ja</button>
+            <button id="nein__button">Nein</button>
+          </div>
+        </section>
+
+        <!-- + Input button  -->
+
+        <section class="input_btn_section">
+          <div>
+            <label for="auto">Hast dun ein Auto ?</label>
+            <input type="button" value="Ja" id="auto" />
+            <input type="button" value="nein" id="auto" />
+          </div>
+        </section>
+
+        <!-- + input submit -->
+
+        <!-- input submit wird häufig in HTML-Formular verwendet und ist wie ein Busfahrer, der erstmal alles sammelt und dann nach Bedarf an den Server schickt -->
+        <!-- value ist das was man im Brwoser sieht  -->
+        <div>
+          <input type="Submit" value="Submit" />
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

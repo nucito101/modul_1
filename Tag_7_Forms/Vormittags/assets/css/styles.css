@@ -1,0 +1,92 @@
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 5vh 10vw;
+}
+
+/* ! rgba => Achtung der Alpha wert sollte nur mit punkt "." geschrieben werden, sobalb man mit nicht ganzen Zahlen arbeitet */
+
+/* ! Bei hex dezimal die letzten zwei Zahlen können auch als Alpha bzw Opacity verwendet werden */
+fieldset {
+  border: 2px solid black;
+  background-color: rgba(62, 153, 185, 0.14);
+  padding: 20px 30px;
+  max-width: 550px;
+}
+
+legend {
+  font-size: 3rem;
+}
+
+section {
+  margin: 20px 0;
+}
+
+h3 {
+  margin-top: 5px;
+}
+
+/*  wir haben drei Möglichkeiten, das Input Element zu selektieren */
+
+/*  + V1 */
+
+input {
+  padding: 5px 20px;
+  margin: 5px 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* V2 */
+
+#text,
+#number,
+#telefon,
+#mail,
+#password {
+  border: 2px solid red;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* v3 über type */
+
+input [type="range"] {
+  cursor: pointer;
+  margin-top: 30px;
+  width: 200px;
+  background: darkgreen;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+input[type="button"] {
+  border: 2px solid red;
+}
+
+textarea {
+  background: url("../img/cool.jpeg") contain/center no-repeat;
+
+  /* entweder alles direkt in einer Zeile, da muss man nur mit background arbeiten oder man kann die drei Eigenschaften einfach nacheinander schreiben */
+  /* background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; */
+  width: 100%;
+  background-color: white;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  border: none;
+  padding: 1rem 3rem;
+  background-color: deeppink;
+}

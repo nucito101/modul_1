@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 5vh 30vw;
+  font-size: 1.2rem;
+  font-style: bold;
+  font-weight: 500;
+}
+
+fieldset {
+  border: none;
+  max-width: 700px;
+}
+
+section {
+  margin: 8px 0;
+}
+
+label[for]::after {
+  content: " *";
+  color: red;
+}
+
+label[for="thema"]::after {
+  content: "";
+}
+
+input,
+select,
+button {
+  width: 100%;
+  max-width: 450px;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+textarea {
+  width: 90%;
+  max-width: 500px;
+}
+
+.text_feld {
+  display: flex;
+  gap: 10px;
+  max-width: 450px;
+}
+
+button {
+  background-color: aqua;
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(7, 115, 115);
+}
