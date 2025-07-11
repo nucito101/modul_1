@@ -9,11 +9,16 @@
   }
 
   .left-container {
-    height: 70vh;
+    height: 50vh;
     width: 100vw;
   }
+
+  .left-main {
+    margin-top: 8vh;
+  }
+
   .right-container {
-    height: 60vh;
+    height: 80vh;
     width: 100vw;
   }
 }
@@ -90,7 +95,6 @@
     flex-basis: 100px;
     height: 80;
     width: 80px;
-    border: 2px solid red;
   }
   .signatur {
     flex-basis: 100px;
