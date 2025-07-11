@@ -33,10 +33,6 @@ main {
   text-transform: uppercase;
 }
 
-.top-right {
-  left: 20px;
-}
-
 .left-main {
   display: flex;
   flex-direction: column;
@@ -59,6 +55,7 @@ main {
 .top-right {
   display: flex;
   align-items: baseline;
+  left: 20px;
 }
 
 .top-right p {
