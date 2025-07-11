@@ -1,0 +1,104 @@
+@media only screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .left-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .left-container {
+    height: 70vh;
+    width: 100vw;
+  }
+  .right-container {
+    height: 60vh;
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  footer {
+    padding: 0 10px;
+  }
+  .social {
+    flex-basis: 150px;
+  }
+
+  .navigation {
+    height: 90%;
+  }
+
+  button {
+    font-size: 25px;
+    flex-basis: 150px;
+  }
+  .signatur {
+    flex-basis: 150px;
+  }
+  .signatur h2 {
+    font-size: 16px;
+  }
+  .signatur p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 526px) {
+  footer {
+    padding: 0 5px;
+  }
+  .social {
+    flex-basis: 120px;
+  }
+
+  .navigation {
+    height: 80%;
+  }
+
+  button {
+    font-size: 22px;
+    flex-basis: 120px;
+  }
+  .signatur {
+    flex-basis: 120px;
+  }
+  .signatur h2 {
+    font-size: 14px;
+  }
+  .signatur p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  footer {
+    padding: 0;
+    justify-content: space-evenly;
+  }
+  .social {
+    flex-basis: 100px;
+  }
+
+  .navigation {
+    height: 80%;
+  }
+
+  button {
+    font-size: 20px;
+    flex-basis: 100px;
+    height: 80;
+    width: 80px;
+    border: 2px solid red;
+  }
+  .signatur {
+    flex-basis: 100px;
+  }
+  .signatur h2 {
+    font-size: 12px;
+  }
+  .signatur p {
+    font-size: 10px;
+  }
+}

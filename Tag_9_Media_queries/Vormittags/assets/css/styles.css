@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* -------------------- */
+
+/* #header */
+
+header nav {
+  display: none;
+}
+
+.burger-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.burger {
+  background-color: white;
+  height: 5px;
+  width: 30px;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+/* #Hero Section */
+
+.hero {
+  background: url("https://images.unsplash.com/photo-1523688471150-efdd09f0f312?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D%22alt=%22Hotel")
+    center/cover fixed;
+  /* !V1 */
+  /* background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; */
+  height: 100vh;
+}
+
+.hero div {
+  padding: 0 10vw;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: white;
+  padding-bottom: 5vh;
+  padding-top: 20vh;
+}
+
+.hero p {
+  color: white;
+}
+
+/* # Info section */
+
+.info div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info div p {
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+/* ! Media Queries */
+
+/* * Smartpfone -> Desktop = bis xxx px */
+/* ? Smartphone bis 576px */
+/* ?Tablet bis 768px */
+/* ? Desktop bis 992px */
+
+/* * Destop -> Smartphone = ab xxx px */
+/* ? Smartphone ab 768px */
+/* ab diesem Wert kommen die Tablet styles zum Einsatz */
+
+/* ? Tablet ab 992pc */
+/* Ab diesem Wert kommen die Desktop Styles zum Einsatz */
+
+/* $ WIE IST DIE SCHREIBWEISE BZW Der Syntax ? */
+
+/* @media screen {
+  styles für alle Geräte mit Bildschirm
+} */
+
+/* @media only screen {
+  Styles für ale Geräte mit Bildschirmen, aber ohne ältere Browser
+} */
+/* Das Schlüsselwort "only" wird in CSS verwendet um sicherzustellen, das die Media Query nur von Browser interpretiert wird, die Media Queires verstehn */
+
+/* ! Ohne only könnten die älteren Brwoser die gesamte Regel ignorieren */
+
+@media only screen and (min-width: 768px) {
+  /* ! In einem Breakpoint werden die Änderungen gegenüber den vorgegangenen Regel aufgeführt */
+
+  .hero div {
+    padding: 0 20vw;
+  }
+
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .hero o {
+    font-size: 1.5rem;
+  }
+
+  .info div {
+    border: 2px dashed orange;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .burger-wrapper {
+    display: none;
+  }
+
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  a {
+    padding: 0 20px;
+    color: black;
+  }
+
+  .hero div {
+    padding: 0 15 vw;
+  }
+
+  .hero p {
+    color: yellow;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+  }
+  /* jedes Element kann jederzeit überschrieben werden bzw optimiert werden, obwohl einige Eigenschaften bereits von den vorherigen Breakpoint vererbt sind */
+
+  .info div {
+    border: none;
+  }
+}
