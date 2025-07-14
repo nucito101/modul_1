@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color: #333333;
+  --secound-color: #737b80;
+  --bg-color: #e9e9e0;
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: "cormorant";
+  src: url(../fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "cormorant_italic";
+  src: url(../fonts/Cormorant_Garamond/CormorantGaramond-Italic-VariableFont_wght.ttf);
+}
+
+body {
+  /* background-color: var(--bg-color); */
+  font-family: "cormorant";
+  color: var(--color);
+  text-decoration: none;
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  padding: 20px;
+  font-weight: bold;
+}
+
+header h1 .big {
+  font-size: 2.8rem;
+}
+
+nav {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  border-top: 3px solid var(--color);
+  border-bottom: 3px solid var(--color);
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "main aside";
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.article_grid {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 80px 1fr 30px;
+  grid-template-areas:
+    "head head"
+    "article kitchen"
+    "article kitchen";
+  gap: 10px;
+}
+
+.article_grid .tittle {
+  grid-area: head;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.8rem;
+  max-width: 100%;
+}
+
+.article_section {
+  grid-area: article;
+  display: grid;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: 100px 220px 300px;
+  gap: 40px;
+  grid-template-areas:
+    "article1 article4"
+    "article2 article5"
+    "article3 article6";
+}
+
+.article_section h3 {
+  font-size: 1.5rem;
+}
+
+.article1 {
+  grid-area: article1;
+}
+
+.article2 {
+  grid-area: article2;
+}
+
+.article3 {
+  grid-area: article3;
+}
+
+.article4 {
+  grid-area: article4;
+}
+
+.article5 {
+  grid-area: article5;
+}
+
+.article6 {
+  grid-area: article6;
+}
+.kitchen_img {
+  grid-area: kitchen;
+  font-family: "cormorant_italic";
+}
+
+img {
+  height: 80%;
+  width: 100%;
+}
+
+aside {
+  grid-area: aside;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 250px 250px 250px;
+  grid-template-areas:
+    "header"
+    "box1"
+    "box2"
+    "box3";
+  gap: 20px;
+}
+
+.aside_head {
+  grid-area: "header";
+  text-align: center;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+.add {
+  grid-area: "box1";
+  font-size: 2.7rem;
+  border: 4px solid black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.knives {
+  grid-area: "box2";
+  font-size: 1.16rem;
+  text-align: center;
+  padding: 25px;
+  border: 4px solid black;
+}
+
+.knives a {
+  text-decoration: none;
+  color: var(--secound-color);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--secound-color);
+}
+
+.logo {
+  grid-area: "box3";
+  border: 4px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo img {
+  height: 100%;
+}
