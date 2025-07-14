@@ -1,7 +1,0 @@
-{
-  "editor.acceptSuggestionOnCommitCharacter": true,
-  "editor.quickSuggestions": {
-    "other": "off"
-  },
-  "editor.suggestOnTriggerCharacters": false
-}
