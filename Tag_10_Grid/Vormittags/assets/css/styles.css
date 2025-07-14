@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Display Grid arbeiter auch wie vorhin mit solchen Einheiten bzw Units px, vw, vh, % */
+/* fr===> fraction, was ist überhaupt fraction => 1 Anteil am noch verfügbaren platz am Grid Container */
+body {
+  height: 100vh;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 90vw 10vw;
+  grid-template-rows: 50px 1 fr 80px;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+}
+
+/* grid-area wird immer in das INdelement Block geschrieben und hat eine direkte Beziehung zu grid-template-area */
+/* Bei grid-area kann man selber einen Namen aussuchen und dafür gibt es keine feste Regeln */
+
+header {
+  background: peru;
+  grid-area: header;
+}
+
+main {
+  background-color: limegreen;
+  grid-area: main;
+  overflow: auto;
+}
+
+aside {
+  background-color: brown;
+  grid-area: aside;
+}
+
+footer {
+  background-color: blueviolet;
+  grid-area: footer;
+}
+
+/* Diese Container sind Elternelemente, d.h diese kriegt von uns Display grid */
+
+section {
+  display: grid;
+  grid-template-columns: 200px 200px 1fr;
+  grid-template-rows: 200px 30vh 200px 300px 100px;
+  gap: 20px;
+}
+
+section > * {
+  border: 1px solid red;
+}
+
+/* Achtung, bitte die Kindelemente dürfen keine feste höhe und breite von uns bekommen  */
+
+/* section div {
+  width: 200px;
+  height: 200px;
+} */
+
+/* ! Variante 2 */
+
+.box1 {
+  background-color: crimson;
+  /* grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2; */
+  /* genau das selbe nur gekürzt */
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.box2 {
+  background-color: blue;
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+.box3 {
+  background-color: yellow;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+
+.box4 {
+  background-color: salmon;
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+}
+
+.box5 {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  background-color: green;
+}
+
+.box6 {
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
+  background-color: tomato;
+}
+
+.box7 {
+  background-color: purple;
+  grid-column: 1 / 4;
+  grid-row: 5 / 6;
+}
+
+article {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-template-areas:
+    "batman batman aquaman aquaman"
+    "deadpool superman ironman ironman"
+    "hulk thor thor thor"
+    "hulk superwoman superwoman superwoman";
+  gap: 30px;
+  margin: 30px;
+}
+
+.container1 {
+  grid-area: batman;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container2 {
+  grid-area: aquaman;
+  background-color: aqua;
+}
+
+.container3 {
+  grid-area: deadpool;
+  background-color: red;
+}
+
+.container4 {
+  grid-area: superman;
+  background-color: black;
+  color: white;
+}
+
+.container5 {
+  grid-area: ironman;
+  background-color: chocolate;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  /* shortcut */
+
+  /* place-items: center center */
+}
+
+.container6 {
+  grid-area: hulk;
+  background-color: darkgreen;
+}
+
+.container7 {
+  grid-area: thor;
+}
+
+.container8 {
+  grid-area: superwoman;
+  background-color: pink;
+}
