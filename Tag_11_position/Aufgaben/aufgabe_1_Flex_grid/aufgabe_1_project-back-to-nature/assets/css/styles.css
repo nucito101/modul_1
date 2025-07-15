@@ -1,0 +1,349 @@
+/* === GENERAL === */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "ubuntu";
+  src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: "urbanist";
+  src: url(../fonts/Urbanist/Urbanist-VariableFont_wght.ttf);
+}
+
+:root {
+  --secondary-beige: #f0cea0;
+  --primary-green: #a9cba6;
+}
+
+html {
+  font-size: 16px;
+  font-family: "urbanist";
+}
+
+a {
+  text-decoration: none;
+}
+
+/* === NAVBAR === */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 40px;
+  padding: 4px 20px 4px 10px;
+  margin: 0 5px;
+  height: 10vh;
+}
+
+nav img {
+  height: 8vh;
+}
+
+.burger {
+  width: 6vw;
+  height: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.burger div {
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: rgb(17, 24, 39);
+  border-radius: 2px;
+}
+
+/* === HERO SECTION === */
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  background-image: url(../img/Ilustration_Header\ 1-2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 30vh;
+  width: 100vw;
+}
+
+.hero {
+  width: 100%;
+  position: relative;
+  padding: 10px;
+}
+
+.hero h1 {
+  position: absolute;
+  font-size: 2.25rem;
+  width: 50%;
+  top: 13vh;
+  left: 16vw;
+  line-height: 80%;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.button-shadow {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: -5px -8px 3px -5px rgba(0, 0, 0, 0.35) inset;
+  border-radius: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  height: 9vh;
+  padding: 0 3vw;
+}
+
+.btn-3,
+.btn-4 {
+  font-size: 1rem;
+  background-color: var(--primary-green);
+  color: white;
+}
+
+/* === === */
+
+.heading_2_container {
+  background-image: url(../img/Vector.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 10vh;
+}
+
+.heading_2 {
+  text-align: center;
+  width: 80vw;
+  margin: 0 10vw auto 10vw;
+}
+
+.heading_2 h2 {
+  font-size: 2.5rem;
+}
+
+.heading_2 p {
+  font-size: 1rem;
+  margin-top: 4vh;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.miet_feature {
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: -9px -8px 3px -5px rgba(0, 0, 0, 0.35) inset;
+  width: 60vw;
+  height: 40vh;
+  text-align: center;
+  background-color: white;
+  margin-top: 60px;
+}
+
+.miet_feature img {
+  height: 20vh;
+}
+
+.miet_feature h2,
+.miet_feature p {
+  width: 30vw;
+  margin: 0 15vw;
+  line-height: 4vh;
+}
+
+.miet_feature h2 {
+  font-size: 1.23rem;
+  margin-bottom: 1vh;
+}
+
+.miet_feature p {
+  font-size: 0.98rem;
+}
+
+.btn-4 {
+  justify-content: flex-start;
+  padding-left: 20px;
+  gap: 18vw;
+}
+
+/* === CAMPER CARD === */
+
+.camper_list_header {
+  background-image: url(../img/Background\ Bulb.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+  height: 40vh;
+  margin: 5vh 0 2vh 0;
+}
+
+.camper_list_header h2 {
+  font-size: 2.5rem;
+  margin-top: 6vh;
+  margin-bottom: 3vh;
+}
+
+.camper_list_header p {
+  width: 90vw;
+  margin: 0 5vw;
+}
+
+.camper {
+  background-color: var(--secondary-beige);
+  border-radius: 40px;
+  overflow: hidden;
+  border: 2px solid black;
+  box-shadow: -9px -8px 3px -5px rgba(0, 0, 0, 0.35) inset;
+  width: 85vw;
+  margin: 0 7.5vw 50px;
+}
+
+.camper-img {
+  background-color: white;
+  border-bottom: 2px solid black;
+}
+
+.camper-img img {
+  max-width: 100%;
+}
+
+.card-content {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1vh 10vw 0 10vw;
+}
+
+.card-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.card-content h2 span {
+  font-size: 1.25rem;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.camper_features ul {
+  list-style: none;
+  margin-left: 1vw;
+}
+
+.camper_features ul li {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.camper_features ul li .icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 30px;
+}
+
+.camper-btn {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: -5px -8px 3px -5px rgba(0, 0, 0, 0.35) inset;
+  border-radius: 40px;
+  cursor: pointer;
+  width: 70vw;
+  height: 7vh;
+  margin: 5px 8vw;
+}
+
+.camper-btn-green {
+  background-color: var(--primary-green);
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* === FOOTER === */
+
+footer {
+  border-top: 3px solid black;
+}
+
+.footer_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 40px 0 30px 0;
+}
+
+.footer_link img {
+  height: 90px;
+  width: 100px;
+  margin-bottom: 30px;
+}
+
+.footer_link a {
+  font-family: "ubuntu";
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  line-height: 30px;
+  color: black;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.Impres {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.Impres a {
+  color: black;
+}
+
+.Impres a::after {
+  content: "|";
+  margin-left: 0.25em;
+}
+
+.Impres a:last-child::after {
+  content: "";
+}
