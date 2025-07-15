@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  /* margin: 5% auto;
+  width: 80vw; */
+
+  /* text-align: center; */
+
+  padding: 5% 15%;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
+code {
+  color: blue;
+  font-weight: bold;
+}
+
+/* ==== boxes und container */
+
+.box-container {
+  gap: 10px;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  border: 2px solid gray;
+  width: 100px;
+  height: 100px;
+}
+
+/* === Static */
+
+.static {
+  background-color: rosybrown;
+}
+
+/* === ralative */
+
+.relative {
+  background-color: rgb(118, 250, 162);
+  position: relative;
+  top: 40px;
+  left: 40px;
+}
+
+/* === absolute */
+
+.relative-wrapper {
+  position: relative;
+}
+
+.absolute {
+  background-color: purple;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* ====  fixed */
+
+.fixed {
+  background-color: salmon;
+  position: fixed;
+  right: 10px;
+  bottom: 120px;
+}
+
+/* ==== Stiky */
+
+.sticky {
+  background-color: rgb(200, 240, 70);
+  position: sticky;
+  top: 0;
+}
+
+.sticky_zwei {
+  background-color: green;
+  position: sticky;
+  top: 2px;
+}
+
+article:last-of-type .box-container {
+  background-color: rgba(128, 128, 128, 0.1);
+  align-items: flex-start;
+  height: 50vh;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ich-schaffe-platz {
+  height: 100vh;
+}
+
+.btn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  text-decoration: none;
+  color: pink;
+  background-color: crimson;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
