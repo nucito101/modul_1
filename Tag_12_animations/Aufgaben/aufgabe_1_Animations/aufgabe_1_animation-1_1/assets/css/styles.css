@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+.arrow-container:hover {
+  animation: schweben 1.5s ease-in-out forwards;
+}
+.arrow-container-up:hover {
+  animation: schweben_reverse 1.5s ease-in-out forwards;
+}
+
+.arrow-container img,
+.arrow-container-up img {
+  width: 90px;
+  height: 90px;
+}
+
+.arrow-container-up {
+  transform: translateY(20px);
+}
+
+.seite1 {
+  background-color: salmon;
+}
+
+.seite2 {
+  background-color: gold;
+}
+
+.seite3 {
+  background-color: aquamarine;
+}
+
+@keyframes schweben {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes schweben_reverse {
+  0% {
+    transform: translateY(20px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+}
