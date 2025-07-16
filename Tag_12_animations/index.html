@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>transform, transition, animation</title>
+  </head>
+  <body>
+    <main>
+      <h1>transform, transition, animation</h1>
+      <section class="transform">
+        <h2>Transform</h2>
+        <p>CSS transform endet die die Position, Größe und Form von HTML-Elementen</p>
+        <ul>
+          <li>translate => bewegen</li>
+          <li>rotate => rotieren</li>
+          <li>scale => skalieren</li>
+        </ul>
+        <div class="example">E</div>
+      </section>
+
+      <section class="transition">
+        <h2>Transition</h2>
+        <p>Css transition ändert den Wert einer CSS-Eigenschaft über die Zeit</p>
+
+        <!-- ! Wichtig beim button element (nicht input: button) IMMER einen default wer mitgeben (type="?") zb button oder submit -->
+        <button type="button">Klick mich!</button>
+        <br />
+        <label for="hobby">Was ist dein Hobby?</label>
+        <input type="text" id="hobby" name="hobby" placeholder="hobby??" />
+
+        <article>
+          <h3>IMG ZOOM Effect</h3>
+          <div class="scale">
+            <img src="http://unsplash.it/200" alt="random-img" />
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <h2>Animation</h2>
+        <p>
+          Die Keyframes regel ändert CSS Eigenschaften über mehrere Schritte / Iterationen und ist das Grundgerüst für
+          Effekte und Animationen
+        </p>
+        <div class="jump"></div>
+        <article class="animate_section">
+          <div></div>
+        </article>
+
+        <article class="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </article>
+
+        <div class="loader"></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+html {
+  font-family: sans-serif;
+}
+
+* {
+}
+
+h2 {
+  color: rgb(255, 0, 25);
+}
+
+/* # Transform */
+
+.example {
+  width: 50px;
+  height: 50px;
+  background-color: teal;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+
+  /* translate */
+  /* x-achse und y-achse */
+  /* transform: translate (10px, -100px); */
+  /* transform: translateX(10rem); */
+  /* transform: translateY(200%); */
+
+  /* rotate */
+  /* transform: rotate(-90deg); */
+  /* transform: rotateX(100deg); */
+  /* transform: rotateY(50deg); */
+
+  /* scale */
+  transform: scale(1.2);
+  /* transform: scaleY(2); */
+  /* transform: scaleX(3); */
+
+  /* wenn ich mehrere elemente transformen möchte, dann schreibe ich sie hintereinander weg:  */
+  /* transform: scale(2) rotate(20deg) translate(100px); */
+}
+
+.example:hover {
+  transform: scale(2);
+}
+
+/* # transition */
+button {
+  background: deeppink;
+  border-radius: 8px;
+  border-style: none;
+  color: wheat;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 100;
+
+  /* transition muss immer in das "HAuptelement" ( nicht ins hover etc) */
+  transition: background-color ease-in-out, transform 5s 2s cubic-bezier(0, 0.28, 1, 0.17, font-weight 1s ease);
+
+  /* transition: all 1s ease-in*/
+}
+
+button:hover {
+  background-color: rgb(236, 114, 0);
+  transform: scale(1.2);
+  font-weight: 900;
+}
+
+input {
+  transition: background-color 0.5s ease-in-out;
+}
+
+input:focus {
+  background-color: aquamarine;
+}
+
+input:focus::placeholder {
+  transform: scale(2);
+}
+
+/* # IMG */
+
+.scale {
+  border: 2px solid deeppink;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.scale img {
+  transition: transform 0.5s linear;
+}
+
+.scale:hover img {
+  transform: scale(1.2);
+}
+
+/* # Animation */
+
+.jump {
+  background-color: deeppink;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 4rem;
+  animation: jump-pizza 0.5s linear infinite alternate;
+}
+
+@keyframes jump-pizza {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(25px);
+  }
+}
+
+.animate_section {
+  background-color: gainsboro;
+  height: 300px;
+  width: 300px;
+  margin-bottom: 4rem;
+}
+
+.animate_section div {
+  width: 50%;
+  height: 50%;
+  background-color: purple;
+
+  /* mit animation rufe ich den namen der Animation keyframes auf */
+  animation: sectionAnimate 4s 2s linear infinite normal;
+}
+
+.animate_section:hover div {
+  animation-play-state: paused;
+}
+
+@keyframes sectionAnimate {
+  0%,
+  100% {
+    background-color: green;
+  }
+
+  25% {
+    background-color: red;
+    transform: translateY(100%);
+    animation-timing-function: ease;
+  }
+
+  50% {
+    background-color: orangered;
+    transform: translate(100%, 100%);
+  }
+
+  75% {
+    background-color: blue;
+    transform: translateX(100%);
+  }
+
+  /* 100%  wenn wir unterschiedliche start und endpunkt animationen haben wollt */
+}
+
+/* # Loader */
+
+.loader {
+  display: flex;
+  gap: 10px;
+}
+
+.loader div {
+  background-color: orangered;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 4rem;
+}
+
+.loader div:nth-of-type(1) {
+  animation: loading 1.5s infinite linear;
+}
+
+.loader div:nth-of-type(2) {
+  animation: loading 1.5s 0.2s infinite linear;
+}
+
+.loader div:nth-of-type(3) {
+  animation: loading 1.5s 0.4s infinite linear;
+}
+
+.loader div:nth-of-type(4) {
+  animation: loading 1.5s 0.6s infinite linear;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  33% {
+    transform: translateY(-10px);
+  }
+
+  66% {
+    transform: translateY(10px);
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  height: 35px;
+  width: 80px;
+  margin-left: 0px;
+  background: radial-gradient(farthest-side, #ffd1d1 94%, #0000) 4px 22px/5px 5px,
+    radial-gradient(farthest-side, #ffd1d1 94%, #0000) 12px 18px/5px 5px,
+    radial-gradient(farthest-side, #ffd1d1 94%, #0000) 3px 6px/8px 8px,
+    radial-gradient(farthest-side, #eb8594 90%, #0000 94%) left/20px 100%, #bd3342;
+  background-repeat: no-repeat;
+  border-radius: 0 50px 50px 0;
+  border-top-left-radius: 30px 40px;
+  border-bottom-left-radius: 30px 40px;
+  animation: l7 3s infinite steps(10);
+  position: relative;
+}
+.loader::before {
+  content: " ";
+  position: absolute;
+  inset: calc(50% - 8px) -10px calc(50% - 8px) auto;
+  width: 15px;
+  background: #bd3342;
+  clip-path: polygon(0 50%, 100% 0, 70% 50%, 100% 100%);
+}
+@keyframes l7 {
+  100% {
+    width: 20px;
+    margin-left: 60px;
+  }
+}
