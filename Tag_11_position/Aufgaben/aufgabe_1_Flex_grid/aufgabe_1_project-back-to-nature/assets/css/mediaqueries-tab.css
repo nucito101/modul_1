@@ -1,0 +1,113 @@
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+
+  .burger {
+    width: 4vw;
+  }
+
+  .burger div {
+    height: 5px;
+  }
+
+  .hero-img {
+    height: 40vh;
+  }
+
+  .hero h1 {
+    top: 15vh;
+    font-size: 4rem;
+  }
+
+  .features {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .features img {
+    height: 2.5vh;
+  }
+
+  .button-shadow {
+    width: 40vw;
+    height: 7vh;
+  }
+
+  .heading_2_container {
+    background-image: none;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+  }
+
+  .miet_feature h2,
+  .miet_feature p {
+    line-height: 3vh;
+  }
+
+  .miet_feature {
+    width: 27vw;
+    height: 30vh;
+  }
+
+  .miet_feature h2 {
+    font-size: 1rem;
+  }
+
+  .miet_feature p {
+    font-size: 0.9rem;
+  }
+
+  .btn-4 {
+    margin: 10vh 32vw;
+  }
+
+  .Camper-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .camper {
+    width: 46vw;
+    margin: 70px 10px 20px 10px;
+  }
+
+  .card-content {
+    padding: 0 40px;
+  }
+
+  .card-content h2 {
+    font-size: 2rem;
+  }
+
+  .card-content h2 span {
+    font-size: 1rem;
+  }
+
+  .camper_features ul {
+    font-size: 0.8rem;
+  }
+
+  .camper-btn {
+    width: 80%;
+    height: 5vh;
+    margin: 0 4vw 10px 4vw;
+  }
+
+  .footer-img {
+    left: 44vw;
+  }
+
+  .footer_link {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .footer_link a {
+    font-size: 0.7rem;
+  }
+}

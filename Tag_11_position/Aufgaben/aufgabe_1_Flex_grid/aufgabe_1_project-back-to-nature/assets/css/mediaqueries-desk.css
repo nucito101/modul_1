@@ -1,0 +1,94 @@
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 25px;
+  }
+
+  nav {
+    justify-content: space-between;
+    padding: 5px 5px;
+    margin: 0 12vw;
+    height: 8vh;
+  }
+
+  .header_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.7rem;
+  }
+
+  .header_link a {
+    color: black;
+    font-weight: 200;
+  }
+
+  .header_link a:hover {
+    border-bottom: 2px solid black;
+    font-weight: 700;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .hero-img {
+    height: 70vh;
+  }
+
+  .hero h1 {
+    top: 26vh;
+    left: 25vw;
+  }
+
+  .button-shadow {
+    width: 20vw;
+    height: 7vh;
+    font-size: 0.4rem;
+  }
+
+  .cards {
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+  }
+
+  .miet_feature {
+    width: 17vw;
+    height: 40vh;
+  }
+
+  .miet_feature h2,
+  .miet_feature p {
+    line-height: 4vh;
+  }
+
+  .miet_feature h2 {
+    font-size: 1rem;
+  }
+
+  .miet_feature p {
+    font-size: 0.7rem;
+  }
+
+  .btn-4 {
+    margin: 10vh 40vw;
+    font-size: 0.6rem;
+    padding: 0;
+    padding-left: 10px;
+  }
+
+  .camper_list_header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 3vh;
+  }
+
+  .camper_list_header p {
+    width: 50vw;
+    font-size: 0.8rem;
+  }
+
+  .camper {
+    width: 30vw;
+    margin: 70px 10px 20px 10px;
+  }
+}
