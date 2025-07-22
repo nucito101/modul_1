@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./src/main.js"></script>
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Values, conditinals</title>
+  </head>
+  <body>
+    <img src="./src/img/icons8-dark-mode-48.png" alt="" />
+    <section class="functions">
+      <h2>functions</h2>
+      <button onclick="sayHello('Malte')">Hallo</button>
+      <div class="btn-output"></div>
+      <h3>Calculator</h3>
+      <article class="counter">
+        <h4 class="output-vom-rechner">0</h4>
+
+        <button onclick="calc(+1)">+1</button>
+        <button onclick="calc(-1)">-1</button>
+        <button onclick="calc(+10)">+10</button>
+        <button onclick="calc(-10)">-10</button>
+        <button onclick="malZwei()">*2</button>
+        <button onclick="reset()">reset</button>
+      </article>
+    </section>
+    <section>
+      <article class="values">
+        <h2>Values auslesen</h2>
+
+        <form onsubmit="getInputVal(); return false">
+          <label for="name">Name</label>
+          <input type="text" name="userName" id="name" />
+
+          <label for="age">Age</label>
+          <input type="number" name="userAge" id="age" />
+
+          <label for="range">Range</label>
+          <input type="range" name="rangeValue" id="range" min="0" max="50" step="1" value="25" />
+
+          <label for="checkbox">Happy ?</label>
+          <input type="checkbox" name="isHappy" id="checkbox" />
+
+          <label for="bday">Age</label>
+          <input type="date" name="userBday" id="bday" />
+
+          <button type="submit">Submit</button>
+        </form>
+      </article>
+      <article>
+        <h2>if / else & switch</h2>
+        <form onsubmit="checkNumber(); return false">
+          <input type="number" class="num-import" />
+          <button type="submit">Submit</button>
+        </form>
+      </article>
+      <article class="login">
+        <form onsubmit="checkUserData(); return false">
+          <label for="username">Username</label>
+          <input type="text" id="userName" />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+
+          <button type="submit">Submit</button>
+        </form>
+        <div class="login-feedback"></div>
+      </article>
+      <article>
+        <h2>add, remove, toggle -> classlist</h2>
+        <h3 onclick="addClass()" class="add">Add class</h3>
+        <h3 onclick="toggleClass()" class="remove,">Remove calss</h3>
+      </article>
+    </section>
+  </body>
+</html>
