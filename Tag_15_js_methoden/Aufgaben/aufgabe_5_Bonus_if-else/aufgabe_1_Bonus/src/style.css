@@ -1,0 +1,18 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

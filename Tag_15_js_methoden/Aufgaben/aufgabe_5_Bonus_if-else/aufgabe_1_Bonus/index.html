@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Conditionals-TS-Level-2_2 (if/else)</title>
+  </head>
+  <body>
+    <section class="container">
+      <label for="slider">Luftqualität: <span id="aqiValue">0</span></label>
+      <input type="range" id="aqiSlider" class="slider" min="0" max="150" value="0" oninput="checkAirQuality()" />
+      <div id="result" class="result"></div>
+    </section>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
