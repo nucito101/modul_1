@@ -4,5 +4,5 @@ function agegape() {
   const resultOutput = document.querySelector(".result")
 
   const ageDifferenz = Math.abs(alter1 - alter2)
-  resultOutput.textContent = ageDifferenz
+  resultOutput.textContent = `Die Defirrenz ist: ${ageDifferenz}`
 }
