@@ -44,14 +44,16 @@ ul {
   list-style: none;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 2rem;
+  font-size: 0.9rem;
 }
 
 header {
-  height: 17vh;
+  width: 100vw;
   background-color: var(--darkgreen_15);
   color: var(--white);
-  padding: 1rem;
+  padding: 0.5rem 9rem;
 }
 
 nav {
@@ -62,21 +64,339 @@ nav {
 
 .top__banner {
   background-color: var(--darkgreen_20);
-  height: 4vh;
-  width: 80%;
-  margin: auto;
+  height: 2rem;
+  margin: 0 auto 2rem auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow: hidden;
+  border-radius: 7px;
 }
 
 .top__banner__content {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.logo img {
+  width: 9rem;
+  height: auto;
+}
+
+nav button {
+  background-color: var(--green_70);
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+}
+
+.hero {
+  margin-bottom: 6rem;
+}
+
+.hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero img {
+  width: 50vw;
+}
+
+.hero__text {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: auto 7rem auto 2rem;
+}
+
+.hero__text h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 2;
+  color: var(--darkgreen_15);
+  border-bottom: 3px solid var(--green_70);
+  width: fit-content;
+}
+
+.hero__text h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--darkgreen_15);
+}
+
+.hero__text p {
+  line-height: 1.6;
+  color: var(--grey_30);
+}
+
+.hero__button button {
+  font-size: 0.9rem;
+  padding: 0.9rem 1rem;
+  border: none;
+  color: var(--darkgreen_15);
+  background-color: var(--green_70);
+  border-radius: 6px;
+  margin: 1rem 1rem 2rem 0;
+}
+
+.hero__button a:last-of-type button {
+  background-color: var(--green_95);
+  border: 1px solid var(--green_70);
+}
+
+.happy__customers {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.happy__customer__img {
+  border: 2px solid var(--green_70);
+  border-radius: 3rem;
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+  width: 7.6rem;
+  height: 4rem;
+}
+
+.happy__customer__img img {
+  height: 2.9rem;
+  width: 2.9rem;
+  top: 5px;
+  border-radius: 99px;
+  margin: 0.2rem 0.1rem;
+}
+
+.happy__customer__img img:nth-of-type(1) {
+  position: absolute;
+  left: 7px;
+}
+
+.happy__customer__img img:nth-of-type(2) {
+  position: absolute;
+  left: 35px;
+}
+
+.happy__customer__img img:nth-of-type(3) {
+  position: absolute;
+  left: 60px;
+}
+
+.happy__customers h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--darkgreen_15);
+}
+
+.happy__customers h4 span {
+  color: var(--darkgreen_30);
+}
+
+.features {
+  width: 82%;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+.features__head {
+  text-align: center;
+}
+
+.features__head h2 {
+  font-size: 3rem;
+  color: var(--darkgreen_15);
+  margin-bottom: 1rem;
+}
+
+.features__head p {
+  font-size: 1rem;
+  color: var(--grey_30);
+  margin-bottom: 3rem;
+}
+
+.features__grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.features__item {
+  border: 1px solid var(--green_70);
+  border-radius: 8px;
+  width: 49%;
+  margin: auto;
+  padding: 1.5rem 2rem;
+  background-color: var(--green_95);
+}
+
+.features__item p {
+  line-height: 1.4;
+  font-size: 0.9rem;
+  color: var(--grey_30);
+}
+
+.features__item__container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.features__item__container h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.features__item__container img {
+  width: 3.3rem;
+}
+
+.calorie__calculator__head {
+  text-align: center;
+  width: 48%;
+  margin: auto;
+}
+
+.calorie__calculator__head h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--darkgreen_15);
+  margin-bottom: 1rem;
+}
+
+.calorie__calculator__head h4 {
+  font-weight: 200;
+  line-height: 1.4;
+  color: var(--grey_30);
+}
+
+.form__container {
+  max-width: 80vw;
+  margin: 3rem auto;
+  background-color: var(--green_95);
+  border: 1px solid var(--green_70);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+#calculator__form {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  grid-template-columns: 48% 48%;
+  grid-template-rows: 5rem 5rem 5rem 3rem;
+  grid-template-areas:
+    "Height Age"
+    "Weight Activity"
+    "gender gender"
+    "btn btn";
+}
+
+.input__container:nth-of-type(1) {
+  grid-area: Height;
+}
+.input__container:nth-of-type(2) {
+  grid-area: Age;
+}
+.input__container:nth-of-type(3) {
+  grid-area: Weight;
+}
+.input__container:nth-of-type(4) {
+  grid-area: Activity;
+}
+
+.input__container:nth-of-type(5) {
+  grid-area: gender;
+}
+
+#calculator__form button {
+  grid-area: btn;
+  width: 25%;
+  margin: 0 auto;
+  padding: 0.8rem;
+  background-color: var(--green_70);
+  border: none;
+  border-radius: 8px;
+  color: var(--darkgreen_15);
+  font-weight: 600;
+}
+
+#calculator__form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--darkgreen_15);
+}
+
+#calculator__form input,
+#calculator__form select {
+  width: 100%;
+  height: 2rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--green_70);
+  padding: 0 0.3rem;
+  border-radius: 7px;
+  background-color: var(--white);
+}
+
+.input__container__gender {
+  text-align: center;
+}
+
+.input__container__gender h5 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--grey_30);
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset label {
+  margin: auto 2rem;
+  color: var(--grey_30);
+}
+
+#calculator__form #radio {
+  width: inherit;
+  height: inherit;
+}
+
+.calorie__result__grid {
+  width: 50%;
+  margin: 3rem auto 1rem auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  border: 1px solid var(--green_70);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+}
+
+.grid__header {
+  border-bottom: 1px solid var(--green_70);
+  padding: 0.3rem 0.2rem;
+}
+
+.grid__label {
+  padding: 0.2rem 2rem;
+}
+
+.grid__value {
+  padding: 0.2rem;
 }
