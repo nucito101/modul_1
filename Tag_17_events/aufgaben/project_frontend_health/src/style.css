@@ -165,19 +165,19 @@ nav button {
 }
 
 .happy__customer__img {
-  border: 2px solid var(--green_70);
+  border: 1px solid var(--green_70);
   border-radius: 3rem;
   height: fit-content;
   width: fit-content;
   position: relative;
   width: 7.6rem;
-  height: 4rem;
+  height: 3.7rem;
 }
 
 .happy__customer__img img {
   height: 2.9rem;
   width: 2.9rem;
-  top: 5px;
+  top: 4px;
   border-radius: 99px;
   margin: 0.2rem 0.1rem;
 }
