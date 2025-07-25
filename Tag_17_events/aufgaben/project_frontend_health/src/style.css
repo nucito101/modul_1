@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "urbanist";
+  src: url(/font/Urbanist/Urbanist-VariableFont_wght.ttf);
+}
+
+:root {
+  --green_70: #cbea7b;
+  --green_85: #e5f5bd;
+  --green: #dcf1a7;
+  --darkgreen_15: #1a3129;
+  --white: #ffff;
+  --grey_30: #4c4c4d;
+  --green_95: #f6fbe9;
+  --darkgreen_20: #234338;
+  --darkgreen_30: #356554;
+  --grey_15: #262626;
+  --grey_60: #98989a;
+  --darkgreen: #2c5446;
+  --lightgrey: #cdcdcd;
+  --darkgrey: #333333;
+  --light-lime-green: #d7ef9a;
+  --light-grey: #d9d9d9;
+  --astel-lime: #eef8d3;
+  --off-white: #f2f2f2;
+}
+
+html {
+  font-family: "urbanist";
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+header {
+  height: 17vh;
+  background-color: var(--darkgreen_15);
+  color: var(--white);
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.top__banner {
+  background-color: var(--darkgreen_20);
+  height: 4vh;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.top__banner__content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.4rem;
+}
