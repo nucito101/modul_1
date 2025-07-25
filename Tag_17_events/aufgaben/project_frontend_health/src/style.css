@@ -210,7 +210,7 @@ nav button {
 .features {
   width: 82%;
   margin: 0 auto;
-  margin-bottom: 6rem;
+  margin-bottom: 13qrem;
 }
 
 .features__head {
@@ -226,7 +226,7 @@ nav button {
 .features__head p {
   font-size: 1rem;
   color: var(--grey_30);
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .features__grid {
@@ -284,11 +284,12 @@ nav button {
   font-weight: 200;
   line-height: 1.4;
   color: var(--grey_30);
+  margin-bottom: 4rem;
 }
 
 .form__container {
   max-width: 80vw;
-  margin: 3rem auto;
+  margin: 3rem auto 10rem auto;
   background-color: var(--green_95);
   border: 1px solid var(--green_70);
   padding: 2rem;
@@ -399,4 +400,77 @@ fieldset label {
 
 .grid__value {
   padding: 0.2rem;
+}
+
+footer {
+  background-color: var(--darkgreen_15);
+  color: white;
+  padding: 3rem;
+}
+
+.footer__container {
+  margin: auto;
+  width: 80%;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  font-size: 0.9rem;
+}
+
+.footer__logo img {
+  width: 8.5rem;
+  height: auto;
+}
+
+.top__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.top__btn button {
+  font-size: 1rem;
+  color: var(--white);
+  background: none;
+  border: none;
+}
+
+.top__btn div {
+  background-color: var(--darkgreen_20);
+  padding: 0.7rem 1.1rem;
+  border-radius: 50%;
+}
+
+.footer__contact {
+  background-color: var(--darkgreen_20);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.footer__contact__container {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
