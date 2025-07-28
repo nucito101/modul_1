@@ -1,0 +1,396 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url(/fonts/Inter-VariableFont.ttf);
+}
+
+@font-face {
+  font-family: "lora";
+  src: url(/fonts/Lora-VariableFont.ttf);
+}
+
+@font-face {
+  font-family: "worksans";
+  src: url(/fonts/WorkSans-VariableFont.ttf);
+}
+
+body {
+  font-family: "worksans";
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+header {
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 16rem;
+}
+
+.line {
+  height: 186px;
+  position: absolute;
+  transform: translatey(-530px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+header p {
+  font-size: 1.25rem;
+  font-weight: 100;
+  letter-spacing: -0.5px;
+}
+
+header h1 {
+  font-family: "inter";
+  font-size: 6rem;
+  width: 50%;
+  text-align: center;
+  line-height: 0.9;
+  margin: 1rem auto;
+}
+
+header .outline {
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white, 0px 0px 2px white;
+}
+
+.header__container {
+  margin: 13rem;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__container img {
+  width: 2.5rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  color: white;
+  background: none;
+  border: 1px solid #aaa;
+}
+
+.header__container button:hover {
+  color: black;
+  background: White;
+}
+
+.stats {
+  background: black;
+  color: white;
+}
+
+.stats h2 {
+  font-size: 5.9rem;
+  font-family: "inter";
+  width: 70%;
+  margin: auto auto auto 7rem;
+}
+
+.stats__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats__info p {
+  font-size: 0.8rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
+
+.stats__info h4 {
+  font-family: "inter";
+  font-size: 5.4rem;
+}
+
+.stats__state img {
+  width: 100%;
+  height: 650px;
+  margin-bottom: 6rem;
+}
+
+.stats__info {
+  margin-left: 7rem;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  position: relative;
+}
+
+.middle img:last-of-type {
+  width: 27.4rem;
+  position: absolute;
+}
+
+.middle img:nth-of-type(1),
+.middle img:nth-of-type(4),
+.middle img:nth-of-type(5) {
+  width: 20.5rem;
+  position: absolute;
+}
+
+.middle img:nth-of-type(2),
+.middle img:nth-of-type(3),
+.middle img:nth-of-type(6) {
+  width: 17.1rem;
+  position: absolute;
+}
+
+.middle img:nth-of-type(1) {
+  transform: translate(400px, -890px);
+}
+
+.middle img:nth-of-type(2) {
+  transform: translate(-520px, -560px);
+}
+
+.middle img:nth-of-type(3) {
+  transform: translate(570px, -180px);
+}
+
+.middle img:nth-of-type(4) {
+  transform: translate(-300px, 50px);
+}
+
+.middle img:nth-of-type(5) {
+  transform: translate(370px, 260px);
+}
+
+.middle img:nth-of-type(6) {
+  transform: translate(-570px, 500px);
+}
+
+.middle img:nth-of-type(7) {
+  transform: translate(180px, 830px);
+}
+
+.middle h3 {
+  font-family: "inter";
+  font-size: 5.2rem;
+  width: 30%;
+  line-height: 0.9;
+  letter-spacing: -1.4px;
+  margin-top: 25.6rem;
+}
+
+.middle p {
+  font-size: 0.98rem;
+  letter-spacing: -0.41px;
+  line-height: 1.6;
+  width: 25%;
+  margin-top: 1rem;
+  margin-bottom: 20rem;
+  transform: translateX(-30px);
+}
+
+.middle p:first-of-type {
+  margin-bottom: 42rem;
+}
+
+.design {
+  background: black;
+  color: white;
+  padding-top: 10.4rem;
+}
+
+.design img:nth-of-type(odd) {
+  width: 45.7rem;
+}
+
+.design img:nth-of-type(even) {
+  width: 22.8rem;
+}
+
+.design p {
+  font-size: 1.23rem;
+  letter-spacing: -0.41px;
+  font-weight: 300;
+  margin-left: 9rem;
+  margin-bottom: 0.7rem;
+}
+
+.design__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 45rem;
+}
+
+.design__title {
+  font-size: 5.2rem;
+  font-family: "inter";
+  line-height: 0.9;
+  width: 30%;
+}
+
+.design__text {
+  font-family: "inter";
+  width: 42%;
+  letter-spacing: -0.41px;
+  font-size: 1.8rem;
+}
+
+.design__text h5 {
+  font-family: "worksans";
+  font-size: 1.1rem;
+  font-weight: 100;
+  margin-top: 1rem;
+  letter-spacing: -0.41px;
+}
+
+.golden {
+  padding-bottom: 0.1rem;
+}
+
+.golden img:first-of-type {
+  transform: translate(160px, -580px);
+  position: absolute;
+}
+
+.golden img:last-of-type {
+  transform: translate(860px, -390px);
+  position: absolute;
+  z-index: 1;
+}
+.circle {
+  max-height: 500px;
+  max-width: 500px;
+  position: absolute;
+  transform: translate(1100px, -200px);
+}
+
+.circle img {
+  width: 100%;
+  animation: rotate 10s linear infinite;
+}
+
+.poppy {
+  background: white;
+  color: black;
+  padding-top: 25rem;
+}
+
+.poppy img:first-of-type {
+  transform: translate(570px, -580px);
+  position: absolute;
+}
+
+.poppy img:last-of-type {
+  transform: translate(280px, -390px);
+  position: absolute;
+}
+
+.splitter {
+  background: #ffffff;
+  height: 13rem;
+}
+
+footer {
+  background: black;
+  color: white;
+  overflow: hidden;
+  padding-left: 7rem;
+}
+
+.text__ticker {
+  color: black;
+  background: white;
+  width: 130%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  overflow: hidden;
+  transform: rotate(45deg) translateY(-1rem);
+  gap: 2rem;
+}
+
+.text__ticker h2 {
+  font-size: 5.5rem;
+  font-family: "lora";
+  animation: scrollText 3s linear infinite alternate;
+  white-space: nowrap;
+}
+
+.text__ticker h2 span {
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 0px 0px 2px black;
+}
+
+.footer__text {
+  width: 50%;
+  font-family: "inter";
+  font-size: 24px;
+  line-height: 1.7;
+  margin-bottom: 6rem;
+  font-weight: 200;
+}
+
+.footer__text p {
+  font-size: 0.75rem;
+  font-family: "worksans";
+  margin-bottom: 2rem;
+}
+
+.footer__text h3 {
+  margin-bottom: 1rem;
+}
+
+.social img {
+  width: 20px;
+}
+
+.foot__text {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.foot__text p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  margin: 0.5rem auto;
+}
+
+.foot__text img {
+  width: 80px;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
