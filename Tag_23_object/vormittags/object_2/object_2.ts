@@ -39,7 +39,7 @@ copyWithAssign.firstName = "Sunny"
 console.log("copy customer", copyWithAssign.firstName)
 console.log("costumer1", customer1.firstName)
 
-const customer4: TNewCustomer = {
+const customer4: TNewCostumer = {
   firstName: "Jochen",
   lastName: "Schweitzer",
   email: "jochen@schweitzer.com",

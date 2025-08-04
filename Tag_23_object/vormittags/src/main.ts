@@ -76,9 +76,9 @@ const movieColection: TMovie[] = [movie1, movie2, movie3]
 
 // ich kann das Array von dem Object dann in einer Schleife durchlaufen und jeweils einzelne Eigenschaften ausgeben
 
-movieColection.forEach((movie: TMovie) => {
-  console.log(movie1.title)
-})
+// movieColection.forEach((movie: TMovie) => {
+//   console.log(movie1.title)
+// })
 
 // movies nach Erscheinungsjahr sortieren
 
@@ -104,9 +104,9 @@ for (const key in movie4) {
 }
 
 // Values
-for (const values in movie4) {
-  console.log(movie4[values])
-}
+// for (const values in movie4) {
+//   console.log(movie4[values])
+// }
 
 // V2 Neu
 console.log(Object.keys(movie4))
