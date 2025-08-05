@@ -13,8 +13,8 @@
         </div>
         <nav>
           <button class="btn" id="popular" type="button">Popular</button>
-          <button class="btn" id="newest" type="button">Newest</button>
-          <button class="btn" id="latest" type="button">Latest</button>
+          <button class="btn" id="release" type="button">Release Date</button>
+          <!-- <button class="btn" id="latest" type="button">Latest</button> -->
         </nav>
       </header>
 
@@ -28,7 +28,10 @@
             required="" />
           <label for="name" class="form__label">Search Movie, Year, Regisseur...</label>
         </div>
-        <button id="search" type="button">Suche</button>
+        <button id="search" type="button"></button>
+
+        <button id="toggle_genres">Genres</button>
+        <div id="genre_list" class="hidden"></div>
       </section>
 
       <section id="moviecontainer">

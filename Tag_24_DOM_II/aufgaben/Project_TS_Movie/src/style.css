@@ -50,6 +50,10 @@ button {
 }
 
 #search {
+  display: none;
+}
+
+#toggle_genres {
   margin-top: 2rem;
 }
 
@@ -63,13 +67,13 @@ button {
   font-weight: 600;
 }
 
-#search:active {
+#toggle_genres:active {
   transform: scale(0.9);
 }
 
 #aside {
   top: 10rem;
-  width: 30%;
+  width: 25%;
   position: fixed;
   height: 30%;
   display: flex;
@@ -140,7 +144,7 @@ button {
 #moviecontainer {
   position: absolute;
   top: 13rem;
-  left: 25rem;
+  left: 21rem;
   right: 0;
   bottom: 0;
   padding: 1rem;
@@ -153,13 +157,13 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 3rem;
 }
 
 .container {
   position: fixed;
   top: 9.5rem;
-  left: 25rem;
+  left: 21rem;
   right: 0;
   height: 4rem;
   padding: 0 1rem;
@@ -188,14 +192,45 @@ button {
   margin-left: 1.5rem;
 }
 
+.movie-card:hover {
+  transform: scale(1.02);
+}
+
+.movie-card h3 {
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.movie-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
 .bar_sort:nth-of-type(1) img {
   transform: scaley(-1);
 }
 
 #output {
   border-right: 1px solid var(--fresh-accent);
-  width: 18%;
+  width: 20%;
   padding: 0.4rem 2rem;
   font-size: 1rem;
   font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+#genre_list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 0.6rem;
+}
+
+.genre-btn {
 }
