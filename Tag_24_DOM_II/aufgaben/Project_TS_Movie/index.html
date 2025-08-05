@@ -7,22 +7,40 @@
   </head>
   <body>
     <main>
-      <section id="aside">
+      <header>
         <div class="logo">
-          <h1>TS Movie for Your</h1>
+          <h1>Movie for Your</h1>
         </div>
-        <div class="group">
-          <input type="text" id="searchinput" class="input" />
-          <span class="highlight"></span>
-          <span class="bar"></span>
-          <label>Search Movie,Year,Regisseur...</label>
+        <nav>
+          <button class="btn" id="popular" type="button">Popular</button>
+          <button class="btn" id="newest" type="button">Newest</button>
+          <button class="btn" id="latest" type="button">Latest</button>
+        </nav>
+      </header>
+
+      <section id="aside">
+        <div class="form__group field">
+          <input
+            type="text"
+            class="form__field"
+            id="searchinput"
+            placeholder="Search Movie, Year, Regisseur..."
+            required="" />
+          <label for="name" class="form__label">Search Movie, Year, Regisseur...</label>
         </div>
-        <button class="btn" id="search" type="button">Suche</button>
-        <button class="btn" id="popular" type="button">Popular</button>
-        <button class="btn" id="newest" type="button">Newest</button>
-        <button class="btn" id="latest" type="button">Latest</button>
+        <button id="search" type="button">Suche</button>
       </section>
-      <section id="main">
+
+      <section id="moviecontainer">
+        <div class="container">
+          <div id="output"></div>
+          <div>
+            <button id="sortup" class="bar_sort" type="button"><img src="/bars-sort.png" alt="Bar sort Up" /></button>
+            <button id="sortdown" class="bar_sort" type="button">
+              <img src="/bars-sort.png" alt="Bar sort Down" />
+            </button>
+          </div>
+        </div>
         <div id="movielist"></div>
       </section>
     </main>

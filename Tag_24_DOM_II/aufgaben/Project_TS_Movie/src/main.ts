@@ -82,3 +82,20 @@ function showMovies(movieArray: typeof movies, showNotFound: boolean = false) {
   })
 }
 showMovies(movies)
+
+//# === Button Function ===
+const btnEffect = document.querySelectorAll<HTMLButtonElement>(".btn")
+const outputDiv = document.getElementById("output") as HTMLDivElement
+
+btnEffect.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.classList.contains("active")) {
+      button.classList.remove("active")
+      outputDiv.textContent = ""
+    } else {
+      btnEffect.forEach((a) => a.classList.remove("active"))
+      button.classList.add("active")
+      outputDiv.textContent = `${button.textContent} Movies` || ""
+    }
+  })
+})
