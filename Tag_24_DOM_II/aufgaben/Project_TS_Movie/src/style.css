@@ -3,3 +3,86 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --bg-color: #f1dfc0;
+  --text-color: #3f3a32;
+  --text-muted: #7e7366;
+  --accent-color: #f8e8cc;
+  --highlight-color: #da9f7d;
+  --border-color: #e5d8c3;
+  --fresh-accent: #c8d3c1;
+}
+
+body {
+  background: var(--bg-color);
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.logo {
+  height: 8%;
+  width: 90%;
+  text-align: center;
+  padding: auto;
+  border-bottom: 3px solid var(--border-color);
+  margin-top: 2rem;
+}
+
+#aside {
+  border: 2px solid green;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#main {
+  padding: 2rem;
+  border: 2px solid red;
+  height: 100%;
+  width: 70%;
+}
+
+#movielist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  height: 100%;
+}
+
+.movie-card {
+  width: 13rem;
+  height: 18rem;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  transition: transform 0.2s;
+}
+
+/* .movie-card:hover {
+  transform: scale(1.02);
+}
+
+.movie-card h3 {
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.movie-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+} */

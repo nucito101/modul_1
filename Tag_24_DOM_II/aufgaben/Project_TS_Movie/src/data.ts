@@ -1,4 +1,4 @@
-const movies: [string, string, string, string, string[], string][] = [
+export const movies: [string, string, string, string, string[], string][] = [
   ["The Shawshank Redemption", "1994", "Frank Darabont", "2h 22min", ["Crime", "Drama"], "9.3"],
   ["The Godfather", "1972", "Francis Ford Coppola", "2h 55min", ["Crime", "Drama"], "9.2"],
   ["The Godfather: Part II", "1974", "Francis Ford Coppola", "3h 22min", ["Crime", "Drama"], "9.0"],

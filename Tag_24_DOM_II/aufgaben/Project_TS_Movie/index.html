@@ -6,6 +6,26 @@
     <title>Project-TS Movies for you</title>
   </head>
   <body>
+    <main>
+      <section id="aside">
+        <div class="logo">
+          <h1>TS Movie for Your</h1>
+        </div>
+        <div class="group">
+          <input type="text" id="searchinput" class="input" />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Search Movie,Year,Regisseur...</label>
+        </div>
+        <button class="btn" id="search" type="button">Suche</button>
+        <button class="btn" id="popular" type="button">Popular</button>
+        <button class="btn" id="newest" type="button">Newest</button>
+        <button class="btn" id="latest" type="button">Latest</button>
+      </section>
+      <section id="main">
+        <div id="movielist"></div>
+      </section>
+    </main>
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
