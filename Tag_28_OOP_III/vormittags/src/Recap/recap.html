@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recap Schere Stein Papier</title>
+  </head>
+  <body>
+    <main>
+      <form>
+        <section class="count-rounds">
+          <h2>Wie viele Runden?</h2>
+          <article class="runden-anzeige">
+            <h2>
+              <span class="gespielte-runden"></span>
+              <span class="gesamte-runden"></span>
+            </h2>
+          </article>
+
+          <article class="runden-anzahl">
+            <input type="radio" id="five" name="num-of-rounds" value="5" checked />
+            <label for="five">5</label>
+            <input type="radio" id="ten" name="num-of-rounds" value="10" />
+            <label for="ten">10</label>
+
+            <input type="radio" id="fifteen" name="num-of-rounds" value="15" />
+
+            <label for="fifteen">15</label>
+            <input type="radio" id="twenty" name="num-of-rounds" value="20" />
+            <label for="twenty">20</label>
+          </article>
+        </section>
+
+        <section class="score-board">
+          <div class="spieler tag">Spieler</div>
+          <div class="computer tag">Computer</div>
+          <article>
+            <div class="spielstand-spieler">0</div>
+            <div>:</div>
+            <div class="spielstand-computer">0</div>
+          </article>
+        </section>
+
+        <section class="action-output">
+          <h3>Lass uns spielen</h3>
+        </section>
+
+        <section class="choices">
+          <button class="schere">Schere</button>
+
+          <button class="stein">Stein</button>
+
+          <button class="papier">Papier</button>
+        </section>
+
+        <section class="mach-deinen-zug">
+          <p>Mach deinen Zug!</p>
+        </section>
+
+        <button class="reset">Nochmal spielen</button>
+      </form>
+    </main>
+    <script type="module" src="./racap.ts"></script>
+  </body>
+</html>
