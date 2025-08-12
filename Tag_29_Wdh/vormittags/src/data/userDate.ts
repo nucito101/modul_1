@@ -27,7 +27,7 @@ export const userListe: IUser[] = [
     ],
   },
   {
-    username: "max.mustermann",
+    username: "max.mustermnn",
     email: "max.mustermann@example.com",
     phoneNumber: "+49 171 1234567",
     address: {
