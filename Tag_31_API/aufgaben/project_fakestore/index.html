@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zamazor</title>
+  </head>
+  <body>
+    <header class="site_header">
+      <div class="brand">
+        <img class="logo" src="/logo.png" alt="Zamazor Logo" />
+        <!-- <img class="logo" src="/Zamazor_logo.png" alt="Zamazor Logo" /> -->
+        <!-- <h1>Zamazor</h1> -->
+      </div>
+      <div class="controlpanel">
+        <div class="control">
+          <input type="text" id="search" placeholder="Search Zamazor" />
+        </div>
+        <div class="control">
+          <select id="category">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+        <div class="control">
+          <select id="sort">
+            <option value="relevance">Relevance</option>
+            <option value="price_up">Price ↑</option>
+            <option value="price_down">Price ↓</option>
+            <option value="rating_down">Rating ↓</option>
+          </select>
+        </div>
+        <button id="cart_btn" class="cart_btn">
+          <img src="/cart-shopping-solid.svg" alt="Shopping Cart" /><span id="cart_count" class="badge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main_container">
+      <section id="products" class="products_grid"></section>
+      <div id="empty" class="empty" hidden>No products were found</div>
+      <div id="loader" class="loader" hidden>Load...</div>
+
+      <dialog id="product_dialog">
+        <article class="dialog_card">
+          <button id="dialog_close" class="icon_btn">x</button>
+          <div class="dialog_body">
+            <img id="product_img" src="" alt="Product Image" />
+            <div class="product_contet">
+              <h2 id="product_title"></h2>
+              <p id="product_category" class="muted"></p>
+              <p id="product_desc"></p>
+              <div class="price_row">
+                <p id="product_price"></p>
+                <div id="product_rating" class="rating"></div>
+              </div>
+              <div class="quantity">
+                <label
+                  >Quantity
+                  <input type="number" id="product_quantity" min="1" value="1" />
+                </label>
+                <button id="product_add" class="primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </dialog>
+
+      <dialog id="cart_dialog">
+        <article class="dialog_cart">
+          <button id="cart_close" class="icon_btn">x</button>
+          <h2>Shopping Basket</h2>
+          <div id="cart_items" class="cart_list"></div>
+          <div class="cart_footer">
+            <div class="cart_total">
+              Subtotal <span class="items_total"></span>:
+              <strong id="cart_total">€0,00</strong>
+            </div>
+            <button id="cart_clear" class="secondary">Clear</button>
+            <button id="checkout" class="primary">Checkout</button>
+          </div>
+        </article>
+      </dialog>
+
+      <div id="message" class="message"></div>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
