@@ -4,36 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zamazor</title>
+    <script src="https://kit.fontawesome.com/c5a90cf62d.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header class="site_header">
-      <div class="brand">
-        <img class="logo" src="/logo.png" alt="Zamazor Logo" />
-        <!-- <img class="logo" src="/Zamazor_logo.png" alt="Zamazor Logo" /> -->
-        <!-- <h1>Zamazor</h1> -->
-      </div>
-      <div class="controlpanel">
-        <div class="control">
-          <input type="text" id="search" placeholder="Search Zamazor" />
+      <div class="site_topbar">
+        <nav class="category_buttons" id="category_buttons"></nav>
+
+        <!-- center: brand -->
+        <a class="brand" href="/">
+          <h1>Zamazor</h1>
+        </a>
+
+        <div class="controlpanel">
+          <div class="sort" id="sort_btn"></div>
+          <div class="control">
+            <button class="search" id="search_toggle">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button id="cart_btn" class="cart">
+              <span class="cart_icon"
+                ><i class="fa-solid fa-bag-shopping"></i><span id="cart_count" class="badge">0</span></span
+              >
+            </button>
+          </div>
         </div>
-        <div class="control">
-          <select id="category">
-            <option value="">All Categories</option>
-          </select>
-        </div>
-        <div class="control">
-          <select id="sort">
-            <option value="relevance">Relevance</option>
-            <option value="price_up">Price ↑</option>
-            <option value="price_down">Price ↓</option>
-            <option value="rating_down">Rating ↓</option>
-          </select>
-        </div>
-        <button id="cart_btn" class="cart_btn">
-          <img src="/cart-shopping-solid.svg" alt="Shopping Cart" /><span id="cart_count" class="badge">0</span>
-        </button>
       </div>
     </header>
+
+    <div class="searchbar" id="searchbar" hidden>
+      <input id="search" type="search" placeholder="Search Zamazor ..." />
+    </div>
 
     <main class="main_container">
       <section id="products" class="products_grid"></section>
