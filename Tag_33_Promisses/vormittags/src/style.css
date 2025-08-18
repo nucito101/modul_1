@@ -1,0 +1,23 @@
+* {
+  margin-top: 10px;
+}
+
+#loading {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 12px solid #5d3ede;
+  border-top: 12px solid #00ecaa;
+  border-radius: 50%;
+  animation: spin 1s linear infinite, move 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
