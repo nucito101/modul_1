@@ -42,7 +42,6 @@ const PH = {
   empty: PL("#empty") as HTMLDivElement,
   loader: PL("#loader") as HTMLDivElement,
   message: PL("#message") as HTMLDivElement,
-  // header
   category: PL("#category_buttons") as HTMLElement,
   sort: PL("#sort_btn") as HTMLDivElement,
   searchToggle: PL("#search_toggle") as HTMLButtonElement,
@@ -60,7 +59,6 @@ const PH = {
   p_dlgRating: PL("#product_rating") as HTMLDivElement,
   p_dlgQty: PL("#product_quantity") as HTMLInputElement,
   p_dlgAdd: PL("#product_add") as HTMLButtonElement,
-  // cart dialog
   cartDlg: PL("#cart_dialog") as HTMLDialogElement,
   cartClose: PL("#cart_close") as HTMLButtonElement,
   cartItems: PL("#cart_items") as HTMLDivElement,

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NEWS APP</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="head_title">NEWS APP</h1>
+
+    <main class="center">
+      <section class="card">
+        <form id="search-form" class="form">
+          <div class="row">
+            <label for="q">Suchbegriff</label>
+            <input id="q" type="search" placeholder="Suchbegriff" required />
+          </div>
+
+          <div class="row">
+            <label for="language">Sprache</label>
+            <select id="language">
+              <option value="de" selected>Deutsch</option>
+              <option value="en">Englisch</option>
+              <option value="fr">Französisch</option>
+              <option value="es">Spanisch</option>
+              <option value="it">Italienisch</option>
+              <option value="nl">Niederländisch</option>
+              <option value="pt">Portugiesisch</option>
+              <option value="ru">Russisch</option>
+              <option value="ar">Arabisch</option>
+              <option value="zh">Chinesisch</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <label for="sortBy">Sortieren nach</label>
+            <select id="sortBy">
+              <option value="relevancy" selected>Relevanz</option>
+              <option value="publishedAt">Datum (neueste)</option>
+              <option value="popularity">Popularität</option>
+            </select>
+          </div>
+
+          <div class="actions">
+            <button type="submit">Suchen</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <div id="status" class="status"></div>
+    <section id="results" class="results"></section>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

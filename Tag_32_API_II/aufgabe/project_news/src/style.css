@@ -1,0 +1,157 @@
+:root {
+  --bg: #ffffff;
+  --ink: #111827;
+  --muted: #6b7280;
+  --card: #f9fafb;
+  --border: #d1d5db;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.head_title {
+  text-align: center;
+  margin: 18px 0 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.center {
+  display: grid;
+  place-items: start center;
+  padding: 8px 16px 40px;
+}
+
+.card {
+  width: 380px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 20px;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 16px;
+  align-items: center;
+}
+
+label {
+  color: var(--ink);
+}
+
+input[type="search"],
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+}
+
+input::placeholder {
+  color: #9aa1ab;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+button {
+  min-width: 140px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  background: #e5e7eb;
+  color: #111827;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.97);
+}
+
+.results {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.news-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: #e5e7eb;
+}
+
+.body {
+  padding: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.desc {
+  margin: 0;
+  color: #374151;
+}
+
+.link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.status {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 10px;
+}
