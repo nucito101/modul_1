@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt Star Wars</title>
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+    <header class="app-header">
+      <h1 class="title">Star Wars</h1>
+      <nav class="tabs">
+        <button class="tab">Filme</button>
+        <button class="tab">Planeten</button>
+        <button class="tab">Personen</button>
+      </nav>
+
+      <form id="search-form" class="search" autocomplete="off">
+        <input id="q" name="q" placeholder="Suche nach Titel, Name…" />
+        <button id="search-btn" type="submit">Suchen</button>
+      </form>
+    </header>
+    <main class="container">
+      <div id="status" class="status" hidden>lade Daten…</div>
+      <ul id="list" class="list"></ul>
+    </main>
+    <footer class="app-footer">
+      <p>Made with the Force</p>
+    </footer>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
