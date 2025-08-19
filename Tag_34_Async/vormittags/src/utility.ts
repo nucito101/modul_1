@@ -113,3 +113,12 @@ const cats: Record<CatName, CatInfo> = {
   boris: { age: 5, breed: "Maine Coon" },
   mordred: { age: 16, breed: "British Shorthair" },
 }
+
+if (userPermissionObj.admin) {
+  // an dieser stelle kann man sowohl filter als auch find Methoden benutzen
+  userPermissionObj.admin.filter((role: string) => {
+    if (role === "create") {
+      console.log("du kannst was erstellen")
+    }
+  })
+}
