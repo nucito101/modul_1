@@ -1,7 +1,7 @@
 import { Starfield } from "./Class/Starfield"
 import "./style.css"
 
-// ======================== TYPES ========================
+//  ======================== TYPES ========================
 type Film = {
   title: string
   episode_id: number
@@ -48,10 +48,10 @@ type FilmsListResponse = {
 const listElement = document.getElementById("list") as HTMLUListElement
 const tabButtons = Array.from(document.querySelectorAll<HTMLButtonElement>(".btn"))
 const statusElement = document.getElementById("status") as HTMLDivElement
-const searchForm = document.getElementById("search-form") as HTMLFormElement
-const searchInput = document.getElementById("q") as HTMLInputElement
+const searchForm = document.getElementById("search_form") as HTMLFormElement
+const searchInput = document.getElementById("input_search") as HTMLInputElement
 
-// ======================== API ========================
+//  ======================== API ========================
 const API_BASE_URL = "https://swapi.tech/api"
 const PEOPLE_URL = `${API_BASE_URL}/people`
 const PLANETS_URL = `${API_BASE_URL}/planets`
@@ -60,56 +60,12 @@ const FILMS_URL = `${API_BASE_URL}/films`
 const PEOPLE_LIST_100 = `${PEOPLE_URL}?page=1&limit=100`
 const PLANETS_LIST_100 = `${PLANETS_URL}?page=1&limit=100`
 
-// ======================== STATE ========================
+//  ======================== STATE ========================
 let currentResource: Resource = "films"
 let currentAbortController: AbortController | null = null
 let starfield: Starfield | null = null
 
-// ======================== URL BUILDER ========================
-function buildListUrl(resource: Resource, searchQuery?: string): string {
-  const q = searchQuery?.trim()
-  if (resource === "films") {
-    return q ? `${FILMS_URL}/?title=${encodeURIComponent(q)}` : `${FILMS_URL}/`
-  }
-  if (resource === "people") {
-    return q ? `${PEOPLE_URL}/?name=${encodeURIComponent(q)}` : PEOPLE_LIST_100
-  }
-  if (resource === "planets") {
-    return q ? `${PLANETS_URL}/?name=${encodeURIComponent(q)}` : PLANETS_LIST_100
-  }
-  return ""
-}
-
-// ======================== FETCHERS ========================
-async function fetchFilms(listUrl: string, signal?: AbortSignal): Promise<Film[]> {
-  const url = listUrl.replace(/^http:\/\//, "https://")
-  const res = await fetch(url, { signal })
-  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`)
-  const json = (await res.json()) as FilmsListResponse
-  const films = (json.result ?? []).map((item) => item.properties)
-  return films
-}
-
-async function fetchPageWithDetails<T>(listUrl: string, signal?: AbortSignal): Promise<T[]> {
-  const url = listUrl.replace(/^http:\/\//, "https://")
-  const listRes = await fetch(url, { signal })
-  if (!listRes.ok) throw new Error(`HTTP ${listRes.status} ${listRes.statusText}`)
-
-  const listJson = (await listRes.json()) as TechListResponsePaginated
-  const detailUrls = (listJson.results ?? []).map((e) => e.url.replace(/^http:\/\//, "https://"))
-
-  const items: T[] = await Promise.all(
-    detailUrls.map(async (detailUrl) => {
-      const resp = await fetch(detailUrl, { signal })
-      if (!resp.ok) throw new Error(`HTTP ${resp.status} ${resp.statusText}`)
-      const detail = (await resp.json()) as { result?: { properties?: unknown } }
-      return (detail?.result?.properties ?? detail) as T
-    })
-  )
-  return items
-}
-
-// ======================== TABS ========================
+//  ======================== HELPERS ========================
 function tabLabelToResource(label: string): Resource {
   switch (label.toLowerCase()) {
     case "filme":
@@ -122,48 +78,86 @@ function tabLabelToResource(label: string): Resource {
       return "films"
   }
 }
-
 function setActiveTab(resource: Resource): void {
   tabButtons.forEach((button) => {
-    const label = button.textContent?.trim() || ""
+    const label = (button.textContent || "").trim()
     button.setAttribute("aria-selected", String(tabLabelToResource(label) === resource))
   })
 }
+function buildListUrl(resource: Resource, searchQuery?: string): string {
+  const url = searchQuery?.trim()
+  if (resource === "films") {
+    return url ? `${FILMS_URL}/?title=${encodeURIComponent(url)}` : `${FILMS_URL}/`
+  }
+  if (resource === "people") {
+    return url ? `${PEOPLE_URL}/?name=${encodeURIComponent(url)}` : PEOPLE_LIST_100
+  }
+  if (resource === "planets") {
+    return url ? `${PLANETS_URL}/?name=${encodeURIComponent(url)}` : PLANETS_LIST_100
+  }
+  return ""
+}
 
-// ======================== RENDER ========================
+//  ======================== FETCHERS ========================
+async function fetchFilms(listUrl: string, signal?: AbortSignal): Promise<Film[]> {
+  const url = listUrl.replace(/^http:\/\//, "https://")
+  const res = await fetch(url, { signal })
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`)
+  const json = (await res.json()) as FilmsListResponse
+  return (json.result ?? []).map((item) => item.properties)
+}
+
+async function fetchPageWithDetails<T>(listUrl: string, signal?: AbortSignal): Promise<T[]> {
+  const url = listUrl.replace(/^http:\/\//, "https://")
+  const listRes = await fetch(url, { signal })
+  if (!listRes.ok) throw new Error(`HTTP ${listRes.status} ${listRes.statusText}`)
+  const listJson = (await listRes.json()) as TechListResponsePaginated
+  const detailUrls = (listJson.results ?? []).map((e) => e.url.replace(/^http:\/\//, "https://"))
+  const items: T[] = await Promise.all(
+    detailUrls.map(async (detailUrl) => {
+      const resp = await fetch(detailUrl, { signal })
+      if (!resp.ok) throw new Error(`HTTP ${resp.status} ${resp.statusText}`)
+      const detail = (await resp.json()) as { result?: { properties?: unknown } }
+      return (detail?.result?.properties ?? detail) as T
+    })
+  )
+  return items
+}
+
+//  ======================== RENDER ========================
 function renderFilms(films: Film[]): void {
   listElement.innerHTML = films
     .map(
-      (film) => `
+      (filme) => `
     <li>
-      <strong>${film.title}</strong>
+      <strong>${filme.title}</strong>
       <div class="kv">
-        <span>Episode</span><div>${film.episode_id}</div>
-        <span>Erscheinung</span><div>${film.release_date}</div>
-        <span>Regie</span><div>${film.director}</div>
-        <span>Produzent</span><div>${film.producer}</div>
+        <span>Episode</span><div>${filme.episode_id}</div>
+        <span>Erscheinung</span><div>${filme.release_date}</div>
+        <span>Regie</span><div>${filme.director}</div>
+        <span>Produzent</span><div>${filme.producer}</div>
       </div>
-    </li>`
+    </li>
+  `
     )
     .join("")
 }
-
 function renderPlanets(planets: Planet[]): void {
   listElement.innerHTML = planets
     .map(
-      (planet) => `
+      (planets) => `
     <li>
-      <strong>${planet.name}</strong>
+      <strong>${planets.name}</strong>
       <div class="kv">
-        <span>Klima</span><div>${planet.climate}</div>
-        <span>Terrain</span><div>${planet.terrain}</div>
-        <span>Bevölkerung</span><div>${planet.population}</div>
+        <span>Klima</span><div>${planets.climate}</div>
+        <span>Terrain</span><div>${planets.terrain}</div>
+        <span>Bevölkerung</span><div>${planets.population}</div>
       </div>
-    </li>`
+    </li>
+  `
     )
     .join("")
 }
-
 function renderPeople(people: Person[]): void {
   listElement.innerHTML = people
     .map(
@@ -176,7 +170,8 @@ function renderPeople(people: Person[]): void {
         <span>Größe</span><div>${person.height}</div>
         <span>Gewicht</span><div>${person.mass}</div>
       </div>
-    </li>`
+    </li>
+  `
     )
     .join("")
 }
@@ -187,12 +182,11 @@ async function loadResource(resource: Resource, searchQuery?: string): Promise<v
   currentAbortController = new AbortController()
 
   statusElement.hidden = false
-  statusElement.textContent = "Lade Daten... Hyperantrieb aktiviert."
-  starfield?.startWarp()
+  statusElement.textContent = "Lade Daten… Hyperantrieb aktiviert."
+  starfield?.startWarp?.()
 
   try {
     const listUrl = buildListUrl(resource, searchQuery)
-
     if (resource === "films") {
       const films = await fetchFilms(listUrl, currentAbortController.signal)
       renderFilms(films)
@@ -203,31 +197,30 @@ async function loadResource(resource: Resource, searchQuery?: string): Promise<v
       const people = await fetchPageWithDetails<Person>(listUrl, currentAbortController.signal)
       renderPeople(people)
     }
-
     statusElement.hidden = true
-  } catch (error) {
-    if ((error as Error).name === "AbortError") return
+  } catch (err) {
+    if ((err as Error).name === "AbortError") return
     statusElement.hidden = false
-    statusElement.textContent = `Fehler: ${(error as Error).message}`
-    console.error(error)
+    statusElement.textContent = `Fehler: ${(err as Error).message}`
+    console.error(err)
   } finally {
-    starfield?.stopWarp()
+    starfield?.stopWarp?.()
   }
 }
 
 // ======================== EVENTS ========================
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const label = button.textContent?.trim() || ""
+    const label = (button.textContent || "").trim()
     currentResource = tabLabelToResource(label)
     setActiveTab(currentResource)
-    loadResource(currentResource, searchInput.value)
+    loadResource(currentResource, searchInput?.value)
   })
 })
 
-searchForm.addEventListener("submit", (event) => {
-  event.preventDefault()
-  loadResource(currentResource, searchInput.value)
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault()
+  loadResource(currentResource, searchInput?.value)
 })
 
 // ======================== STARFIELD & INITIAL ========================

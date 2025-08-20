@@ -7,7 +7,7 @@
   </head>
   <body>
     <canvas id="starfield"></canvas>
-    <header class="app-header">
+    <header class="header">
       <h1 class="title">Star Wars</h1>
       <nav class="tabs">
         <button class="btn">Filme</button>
@@ -15,16 +15,16 @@
         <button class="btn">Personen</button>
       </nav>
 
-      <form id="search-form" class="search" autocomplete="off">
-        <input id="q" name="q" placeholder="Suche nach Titel, Name…" />
-        <button id="search-btn" type="submit">Suchen</button>
+      <form id="search_form" class="search" autocomplete="off">
+        <input id="input_search" name="input_search" placeholder="Suche nach Titel, Name…" />
+        <button id="search_btn" type="submit">Suchen</button>
       </form>
     </header>
     <main class="container">
       <div id="status" class="status" hidden>lade Daten…</div>
       <ul id="list" class="list"></ul>
     </main>
-    <footer class="app-footer">
+    <footer class="footer">
       <p>Made with the Force</p>
     </footer>
     <script type="module" src="./src/main.ts"></script>
