@@ -118,5 +118,6 @@ async function displayEpisode(episode: IEpisodeResult): Promise<string> {
   <p>Character: ${characterName}</p>
   </div>
   `
+
   return resultAsString
 }

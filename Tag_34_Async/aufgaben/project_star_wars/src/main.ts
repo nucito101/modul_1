@@ -46,7 +46,7 @@ type FilmsListResponse = {
 
 // ======================== DOM ========================
 const listElement = document.getElementById("list") as HTMLUListElement
-const tabButtons = Array.from(document.querySelectorAll<HTMLButtonElement>(".tab"))
+const tabButtons = Array.from(document.querySelectorAll<HTMLButtonElement>(".btn"))
 const statusElement = document.getElementById("status") as HTMLDivElement
 const searchForm = document.getElementById("search-form") as HTMLFormElement
 const searchInput = document.getElementById("q") as HTMLInputElement
