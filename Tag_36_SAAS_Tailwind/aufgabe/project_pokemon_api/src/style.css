@@ -1,4 +1,27 @@
-:root {
+@import "tailwindcss";
+
+@theme {
+  --poke-normal: #9aa0a6;
+  --poke-fire: #f57c00;
+  --poke-water: #2196f3;
+  --poke-electric: #fbc02d;
+  --poke-grass: #4caf50;
+  --poke-ice: #26c6da;
+  --poke-fighting: #d32f2f;
+  --poke-poison: #8e24aa;
+  --poke-ground: #a1887f;
+  --poke-flying: #90a4ae;
+  --poke-psychic: #ec407a;
+  --poke-bug: #8bc34a;
+  --poke-rock: #795548;
+  --poke-ghost: #7e57c2;
+  --poke-dragon: #5c6bc0;
+  --poke-dark: #455a64;
+  --poke-steel: #78909c;
+  --poke-fairy: #ff80ab;
+}
+
+/* :root {
   --bg: #eaf3f7;
   --ink: #10212a;
   --muted: #6c7a86;
@@ -189,4 +212,4 @@ body {
 }
 .badge.fairy {
   background: var(--t-fairy);
-}
+} */
