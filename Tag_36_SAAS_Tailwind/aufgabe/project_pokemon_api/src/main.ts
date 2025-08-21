@@ -1,3 +1,6 @@
+import CryGenerator from "./sound/CryGenerator"
+import { CRY_TYPES } from "./sound/data/cryTypes"
+import pokemonList from "./sound/data/pokemonList"
 import "./style.css"
 
 const BASE_URL = "https://pokeapi.co/api/v2/"
@@ -7,7 +10,6 @@ const GIF_URL = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${id}.gif`
 
 const LIMIT = 151
-
 const POKEMON_URL_WITH_LIMIT = `https://pokeapi.co/api/v2/pokemon?limit=${LIMIT}&offset=0`
 
 const TYPES = [
@@ -59,8 +61,9 @@ const statusContainer = document.getElementById("status") as HTMLDivElement
 const searchInput = document.getElementById("search") as HTMLInputElement
 const typeOutput = document.getElementById("type_output") as HTMLDivElement
 
+// 👉 FIX (klein): cache.value war als string getypt, ist aber 'any'
 async function fetchJSON<T>(url: string): Promise<T> {
-  const cache = JSON.parse(localStorage.getItem(KEY) || "{}") as Record<string, { timestamp: number; value: string }>
+  const cache = JSON.parse(localStorage.getItem(KEY) || "{}") as Record<string, { timestamp: number; value: any }>
   const cacheEntry = cache[url]
   if (cacheEntry && Date.now() - cacheEntry.timestamp < TTL) {
     return cacheEntry.value as T
@@ -83,7 +86,7 @@ function extractId(url: string): number {
 
 async function loadBasics() {
   statusContainer.textContent = "Load Pokemon..."
-  const list = (await fetchJSON(POKEMON_URL_WITH_LIMIT)) as PokemonResult
+  const list = await fetchJSON<PokemonResult>(POKEMON_URL_WITH_LIMIT)
   allBasics = list.results.map((pokemon): { id: number; name: string } => {
     return {
       name: pokemon.name,
@@ -100,6 +103,47 @@ async function loadDetails(list: Array<{ id: number; name: string }>): Promise<P
   return details
 }
 
+// 👉 NEU: Cry-Synth vorbereiten
+const synth = new CryGenerator()
+synth.init()
+
+// 👉 NEU: Name aus PokeAPI in Mapping-Key umwandeln (Sonderfälle)
+function toMappingKey(apiName: string): string {
+  const n = apiName.toLowerCase()
+  if (n === "nidoran-f" || n === "nidoran♀") return "Nidoran&female;"
+  if (n === "nidoran-m" || n === "nidoran♂") return "Nidoran&male;"
+  if (n === "mr-mime" || n === "mr. mime" || n === "mr mime") return "Mr.Mime"
+  if (n === "farfetchd") return "Farfetch'd"
+  // dein capitalize erzeugt Display-Namen, aber unser Mapping braucht den korrekten Key:
+  return capitalize(apiName)
+}
+
+// 👉 NEU: einfache Kanal-Mischung (3 WebAudio-Kanäle → ein Array)
+function mixChannels(...channels: number[][]): number[] {
+  const maxLen = Math.max(...channels.map((c) => c.length))
+  const out = new Array<number>(maxLen).fill(0)
+  for (let i = 0; i < maxLen; i++) {
+    let sum = 0
+    for (const ch of channels) sum += ch[i] ?? 0
+    out[i] = sum / channels.length
+  }
+  return out
+}
+
+// 👉 NEU: Cry abspielen nach Namen (aus API)
+function playCryByApiName(apiName: string) {
+  const key = toMappingKey(apiName)
+  const meta = pokemonList.find((p) => p.name === key)
+  if (!meta) {
+    console.warn("Kein Cry-Mapping für:", apiName, "(Key:", key, ")")
+    return
+  }
+  const cryType = CRY_TYPES[meta.cry]
+  const { pulse1, pulse2, noise } = synth.generate(cryType, meta.pitch, meta.length)
+  const mixed = mixChannels(pulse1, pulse2, noise)
+  synth.play(mixed)
+}
+
 async function render() {
   grid.innerHTML = ""
   const details = await loadDetails(filteredBasics)
@@ -108,13 +152,18 @@ async function render() {
     .map((detail) => {
       const id = detail.id
       const name = capitalize(detail.name)
-
       const typeNames = detail.types.map((t) => t.type.name)
 
       return `
         <li class="card">
           <div class="thumbnail">
-            <img src="${GIF_URL(id)}" alt="${name}"/>
+            <!-- 👉 NEU: data-pokemon + Klasse für Click-Handler -->
+            <img 
+              src="${GIF_URL(id)}" 
+              alt="${name}" 
+              data-pokemon="${detail.name}" 
+              class="pokemon-img"
+            />
           </div>
           <div class="id">#${String(id).padStart(3, "0")}</div>
           <div class="name">${name}</div>
@@ -192,6 +241,14 @@ function markedActive(type: string | null) {
     typeOutput.querySelector(".type-btn")?.setAttribute("aria-pressed", "true")
   } else typeOutput.querySelector(`.type-btn[data-type="${type}"]`)?.setAttribute("aria-pressed", "true")
 }
+
+// 👉 NEU: Ein einziger Click-Listener am Grid (überlebt Re-Renders)
+grid.addEventListener("click", (e) => {
+  const img = (e.target as HTMLElement).closest<HTMLImageElement>(".pokemon-img")
+  if (!img) return
+  const apiName = img.dataset.pokemon
+  if (apiName) playCryByApiName(apiName)
+})
 
 setupTypeBtn()
 search()
