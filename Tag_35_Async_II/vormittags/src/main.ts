@@ -14,6 +14,30 @@ const outputElement = document.getElementById("output") as HTMLDivElement
 const characterElement = document.getElementById("api-character") as HTMLAnchorElement
 const locationElement = document.getElementById("api-location") as HTMLAnchorElement
 const episodeElement = document.getElementById("api-episode") as HTMLAnchorElement
+const nextPageElement = document.getElementById("next-page") as HTMLButtonElement
+const lastPageElement = document.getElementById("last-page") as HTMLButtonElement
+
+let currentPageUrl: string = CHARAKTER_URL
+nextPageElement.addEventListener("click", async (event: Event) => {
+  event.preventDefault()
+  outputElement.innerHTML = ""
+  try {
+    const resp = await fetch(currentPageUrl)
+    // console.log(await resp.json())
+    const { info, results } = (await resp.json()) as ICharacter
+    // console.log(info)
+    // console.log(results)
+    results.forEach(async (result: ICharaterResult) => {
+      const divElement = document.createElement("div") as HTMLDivElement
+      divElement.innerHTML = await dislpayCharakter(result)
+      outputElement.appendChild(divElement)
+    })
+
+    if (info.next) {
+      currentPageUrl = info.next
+    }
+  } catch (err) {}
+})
 
 characterElement.addEventListener("click", async () => {
   outputElement.innerHTML = ""
@@ -23,10 +47,10 @@ characterElement.addEventListener("click", async () => {
       const { results } = (await resp.json()) as ICharacter
       // console.log(resp)
       // console.log(data)
-      results.forEach((result: ICharaterResult) => {
+      results.forEach(async (result: ICharaterResult) => {
         // console.log(result)
         const characterContainer = document.createElement("div") as HTMLDivElement
-        characterContainer.innerHTML = dislpayCharakter(result)
+        characterContainer.innerHTML = await dislpayCharakter(result)
         outputElement.appendChild(characterContainer)
       })
     }
@@ -35,14 +59,14 @@ characterElement.addEventListener("click", async () => {
   }
 })
 
-function dislpayCharakter(character: ICharaterResult): string {
+async function dislpayCharakter(character: ICharaterResult): Promise<string> {
   const resultAsString = `
-  <div>
-  <p>Name: ${character.name}</p>
-  <p>Status: ${character.status}</p>
+  <div class="flex flex-row justify-center align-sub">
+  <p class="text-red-600 font-bold">Name: ${character.name}</p>
+  <p class="text-amber-300">Status: ${character.status}</p>
   <p>Gender: ${character.gender}</p>
   <p>Origin: ${character.origin?.name}</p>
-  <p>Location: ${character.location?.name}</p>
+  <p class="text-pink-400">Location: ${character.location?.name}</p>
   <img src="${character.image}" alt="${character.name}"
   </div>
   `

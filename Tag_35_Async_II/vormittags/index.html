@@ -9,17 +9,19 @@
     <header id="head">
       <nav>
         <ul>
-          <li><a href="#" id="api-character">Characters</a></li>
+          <li><a href="#" id="api-character" class="text-blue-600!">Characters</a></li>
           <li><a href="#" id="api-location">Locations</a></li>
           <li><a href="#" id="api-episode">Episodes</a></li>
         </ul>
       </nav>
       <h1>Rick And Morty</h1>
     </header>
-    <main>
-      <div id="output"></div>
-      <a href="#head">scroll up</a>
-    </main>
+    <section>
+      <button id="next-page">Next Page</button>
+      <button id="last-page">Last Page</button>
+    </section>
+    <main id="output" class="grid grid-cols-2 m-auto w-fit"></main>
+    <footer><a href="#head">scroll up</a></footer>
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

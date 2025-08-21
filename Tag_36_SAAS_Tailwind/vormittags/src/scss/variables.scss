@@ -1,0 +1,17 @@
+// === Variable ===
+
+// Der Name der Variable ist frei wählbar allerdings sollte sinngemäß sein
+
+// x => headline_fontsize: blue -> nicht gut
+//  => headline_color: blue -> gut
+
+// Warum Variablen wenn wir mit Variable arbeiten, zb fontSie von allen Headline
+//  = dann müssen wr das nur an einer Stelle in Code ändern und nicht eher durch das komplette Styling gehen und an verschiedenen Stelle Änderung vornehmen
+
+// wie ist die Schreibweise ?
+
+// die Variable sollen immer mit "$" geschrieben werden und dann kommt der Name
+
+$headline_fz: 28px;
+$text_fz: 18px;
+$bg_section: #d2d2d2;
