@@ -61,7 +61,6 @@ const statusContainer = document.getElementById("status") as HTMLDivElement
 const searchInput = document.getElementById("search") as HTMLInputElement
 const typeOutput = document.getElementById("type_output") as HTMLDivElement
 
-// 👉 FIX (klein): cache.value war als string getypt, ist aber 'any'
 async function fetchJSON<T>(url: string): Promise<T> {
   const cache = JSON.parse(localStorage.getItem(KEY) || "{}") as Record<string, { timestamp: number; value: any }>
   const cacheEntry = cache[url]
@@ -103,11 +102,11 @@ async function loadDetails(list: Array<{ id: number; name: string }>): Promise<P
   return details
 }
 
-// 👉 NEU: Cry-Synth vorbereiten
+// Cry-Synth vorbereiten
 const synth = new CryGenerator()
 synth.init()
 
-// 👉 NEU: Name aus PokeAPI in Mapping-Key umwandeln (Sonderfälle)
+// Name aus PokeAPI in Mapping-Key umwandeln (Sonderfälle)
 function toMappingKey(apiName: string): string {
   const n = apiName.toLowerCase()
   if (n === "nidoran-f" || n === "nidoran♀") return "Nidoran&female;"
@@ -118,7 +117,7 @@ function toMappingKey(apiName: string): string {
   return capitalize(apiName)
 }
 
-// 👉 NEU: einfache Kanal-Mischung (3 WebAudio-Kanäle → ein Array)
+// einfache Kanal-Mischung (3 WebAudio-Kanäle → ein Array)
 function mixChannels(...channels: number[][]): number[] {
   const maxLen = Math.max(...channels.map((c) => c.length))
   const out = new Array<number>(maxLen).fill(0)
@@ -130,7 +129,7 @@ function mixChannels(...channels: number[][]): number[] {
   return out
 }
 
-// 👉 NEU: Cry abspielen nach Namen (aus API)
+// Cry abspielen nach Namen (aus API)
 function playCryByApiName(apiName: string) {
   const key = toMappingKey(apiName)
   const meta = pokemonList.find((p) => p.name === key)
@@ -157,7 +156,6 @@ async function render() {
       return `
         <li class="card">
           <div class="thumbnail">
-            <!-- 👉 NEU: data-pokemon + Klasse für Click-Handler -->
             <img 
               src="${GIF_URL(id)}" 
               alt="${name}" 
@@ -242,8 +240,8 @@ function markedActive(type: string | null) {
   } else typeOutput.querySelector(`.type-btn[data-type="${type}"]`)?.setAttribute("aria-pressed", "true")
 }
 
-// 👉 NEU: Ein einziger Click-Listener am Grid (überlebt Re-Renders)
 grid.addEventListener("click", (e) => {
+  e.preventDefault()
   const img = (e.target as HTMLElement).closest<HTMLImageElement>(".pokemon-img")
   if (!img) return
   const apiName = img.dataset.pokemon
