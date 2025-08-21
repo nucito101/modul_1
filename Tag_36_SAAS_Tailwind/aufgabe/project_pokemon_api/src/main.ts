@@ -1,6 +1,5 @@
 import "./style.css"
 
-const BASE_URL = "https://pokeapi.co/api/v2/"
 const POKEMON_URL = "https://pokeapi.co/api/v2/pokemon"
 const TYPE_URL = "https://pokeapi.co/api/v2/type"
 const GIF_URL = (id: number) =>
