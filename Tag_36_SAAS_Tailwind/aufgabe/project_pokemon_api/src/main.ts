@@ -113,7 +113,6 @@ function toMappingKey(apiName: string): string {
   if (n === "nidoran-m" || n === "nidoran♂") return "Nidoran&male;"
   if (n === "mr-mime" || n === "mr. mime" || n === "mr mime") return "Mr.Mime"
   if (n === "farfetchd") return "Farfetch'd"
-  // dein capitalize erzeugt Display-Namen, aber unser Mapping braucht den korrekten Key:
   return capitalize(apiName)
 }
 
@@ -134,7 +133,7 @@ function playCryByApiName(apiName: string) {
   const key = toMappingKey(apiName)
   const meta = pokemonList.find((p) => p.name === key)
   if (!meta) {
-    console.warn("Kein Cry-Mapping für:", apiName, "(Key:", key, ")")
+    console.warn("No Cry-Mapping for:", apiName, "(Key:", key, ")")
     return
   }
   const cryType = CRY_TYPES[meta.cry]
