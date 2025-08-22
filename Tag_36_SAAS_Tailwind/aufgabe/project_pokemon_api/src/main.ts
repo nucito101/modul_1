@@ -172,11 +172,15 @@ async function render() {
       const id = detail.id
       const name = capitalize(detail.name)
       const typeNames = detail.types.map((t) => t.type.name)
-
       return `
         <li class="bg-card border border-[#e5eef5] rounded p-2 grid gap-1.5">
           <div class="grid place-items-center aspect-square rounded-[10px] bg-gradient-to-b from-white to-[#f6f9fc]">
-            <img src="${GIF_URL(id)}" alt="${name}" class="w-[100px] h-[100px] object-contain"/>
+          <img src="${GIF_URL(
+            id
+          )}" alt="${name}" class="pokemon-img w-[100px] h-[100px] object-contain cursor-pointer" data-pokemon="${
+        detail.name
+      }"
+      /> 
           </div>
           <div class="text-xs text-muted">#${String(id).padStart(4, "0")}</div>
           <div class="font-extrabold">${name}</div>
