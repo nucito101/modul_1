@@ -31,6 +31,27 @@ const TYPES = [
   "water",
 ]
 
+const TYPE_BG: Record<string, string> = {
+  normal: "bg-t-normal",
+  fire: "bg-t-fire",
+  water: "bg-t-water",
+  electric: "bg-t-electric",
+  grass: "bg-t-grass",
+  ice: "bg-t-ice",
+  fighting: "bg-t-fighting",
+  poison: "bg-t-poison",
+  ground: "bg-t-ground",
+  flying: "bg-t-flying",
+  psychic: "bg-t-psychic",
+  bug: "bg-t-bug",
+  rock: "bg-t-rock",
+  ghost: "bg-t-ghost",
+  dragon: "bg-t-dragon",
+  dark: "bg-t-dark",
+  steel: "bg-t-steel",
+  fairy: "bg-t-fairy",
+}
+
 const KEY = "pokedex"
 // Time To Live
 const TTL = 1000 * 60 * 60 * 24 * 30
@@ -112,14 +133,21 @@ async function render() {
       const typeNames = detail.types.map((t) => t.type.name)
 
       return `
-        <li class="card">
-          <div class="thumbnail">
-            <img src="${GIF_URL(id)}" alt="${name}"/>
+        <li class="bg-card border border-[#e5eef5] rounded p-2 grid gap-1.5">
+          <div class="grid place-items-center aspect-square rounded-[10px] bg-gradient-to-b from-white to-[#f6f9fc]">
+            <img src="${GIF_URL(id)}" alt="${name}" class="w-[100px] h-[100px] object-contain"/>
           </div>
-          <div class="id">#${String(id).padStart(3, "0")}</div>
-          <div class="name">${name}</div>
-          <div class="badges">
-            ${typeNames.map((t) => `<span class="badge ${t}">${t}</span>`).join("")}
+          <div class="text-xs text-muted">#${String(id).padStart(4, "0")}</div>
+          <div class="font-extrabold">${name}</div>
+          <div class="flex gap-1.5 flex-wrap">
+            ${typeNames
+              .map(
+                (t) => `
+    <span class="text-white text-xs px-2 py-0.5 rounded-full ${TYPE_BG[t] ?? "bg-zinc-400"}">
+      ${t}
+    </span>`
+              )
+              .join("")}
           </div>
         </li>
       `
@@ -156,7 +184,9 @@ function search() {
 
 function setupTypeBtn() {
   const typeBtn = document.createElement("button")
-  typeBtn.className = "type-btn"
+  const baseBtn =
+    "type-btn text-xs font-semibold border-0 px-4 py-1.5 rounded-full bg-[#eef4f8] cursor-pointer aria-pressed:outline aria-pressed:outline-2 aria-pressed:outline-accent aria-pressed:bg-white"
+  typeBtn.className = `${baseBtn} bg-[#eef4f8] text-ink`
   typeBtn.textContent = "All"
   typeBtn.setAttribute("aria-pressed", "true")
   typeBtn.onclick = async () => {
@@ -169,7 +199,7 @@ function setupTypeBtn() {
 
   TYPES.forEach((typeName) => {
     const btn = document.createElement("button")
-    btn.className = "type-btn"
+    btn.className = `${baseBtn} ${TYPE_BG[typeName] ?? "bg-zinc-400"}`
     btn.textContent = typeName.toUpperCase()
     btn.dataset.type = typeName
     btn.onclick = async () => {
@@ -188,6 +218,7 @@ function markedActive(type: string | null) {
   typeOutput.querySelectorAll<HTMLButtonElement>(".type-btn").forEach((btn) => {
     btn.setAttribute("aria-pressed", "false")
   })
+
   if (type === null) {
     typeOutput.querySelector(".type-btn")?.setAttribute("aria-pressed", "true")
   } else typeOutput.querySelector(`.type-btn[data-type="${type}"]`)?.setAttribute("aria-pressed", "true")

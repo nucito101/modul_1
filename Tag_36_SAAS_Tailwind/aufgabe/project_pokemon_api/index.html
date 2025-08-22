@@ -7,18 +7,20 @@
   </head>
   <body class="bg-bg text-ink">
     <header class="sticky top-0 z-20 grid gap-2 place-items-center p-4 bg-[#f4fbff] border-b border-[#dbe7ef]">
-      <h1>Pokedex</h1>
+      <h1 class="text-5xl my-2 font-light text-gray-500 tracking-wide drop-shadow-sm">Pokedex</h1>
       <input
         type="text"
         id="search"
         class="w-[90vw] max-w-[720px] px-3 py-2 rounded-full border border-[#cfe0ea]"
         placeholder="Search by name or #ID (e.g. #25) " />
-      <div id="type_output" class="flex flex-wrap gap-2 justify-center"></div>
+      <div id="type_output" class="flex flex-wrap gap-4 justify-center my-4"></div>
     </header>
 
-    <main>
-      <ul id="card_grid" class="card_grid"></ul>
-      <div id="status" class="status">Load Pokémon...</div>
+    <main class="scroll-smooth">
+      <ul
+        id="card_grid"
+        class="list-none my-4 mx-auto max-w-[1100px] px-3 grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-4"></ul>
+      <div id="status" class="text-center text-muted my-3">Load Pokémon...</div>
     </main>
     <script type="module" src="./src/main.ts"></script>
   </body>
