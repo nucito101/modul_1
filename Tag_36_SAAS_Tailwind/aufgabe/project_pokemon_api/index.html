@@ -4,18 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projekt PokéAPI</title>
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <header class="header">
-      <h1>Pokedex</h1>
-      <input type="text" id="search" class="search" placeholder="Search by name or #ID (e.g. #25) " />
-      <div id="type_output" class="type_output"></div>
-    </header>
+    <div id="container3D"></div>
+    <div id="main" style="display: none">
+      <header class="header">
+        <h1>Pokedex</h1>
+        <input type="text" id="search" class="search" placeholder="Search by name or #ID (e.g. #25) " />
+        <div id="type_output" class="type_output"></div>
+      </header>
 
-    <main>
-      <ul id="card_grid" class="card_grid"></ul>
-      <div id="status" class="status">Load Pokémon...</div>
-    </main>
-    <script type="module" src="./src/main.ts"></script>
+      <main>
+        <ul id="card_grid" class="card_grid"></ul>
+        <div id="status" class="status">Load Pokémon...</div>
+      </main>
+    </div>
+    <script type="module" src="./src/animation/animation.js"></script>
+    <!-- <script type="module" src="./src/main.ts"></script> -->
   </body>
 </html>

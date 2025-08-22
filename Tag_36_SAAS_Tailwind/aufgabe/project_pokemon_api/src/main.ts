@@ -4,6 +4,8 @@ const POKEMON_URL = "https://pokeapi.co/api/v2/pokemon"
 const TYPE_URL = "https://pokeapi.co/api/v2/type"
 const GIF_URL = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${id}.gif`
+const GIF_BLACK_URL = (id: number) =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/${id}.gif`
 
 const LIMIT = 151
 
