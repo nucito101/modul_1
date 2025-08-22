@@ -16,7 +16,7 @@ renderer.toneMappingExposure = 1.0
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.shadowMap.enabled = true
 renderer.shadowMap.type = THREE.PCFShadowMap
-document.getElementById("container3D").appendChild(renderer.domElement)
+document.getElementById("container3D")?.appendChild(renderer.domElement)
 
 scene.environment = null
 scene.background = null
@@ -132,7 +132,7 @@ function addSimpleOutline(root, scale = 1.012, color = 0x0a0a0a) {
 }
 
 // ===== Audio =====
-const sfx = new Audio("../../public/soundeffekt2.mp3")
+const sfx = new Audio("/soundeffekt.mp3")
 sfx.preload = "auto"
 sfx.crossOrigin = "anonymous"
 sfx.volume = 1
@@ -213,12 +213,12 @@ async function onPointerDown(e) {
     console.warn("Audio blockiert:", err)
   }
 
+  document.getElementById("text").style.display = "none"
+
   // Animation starten
   action.reset()
   action.paused = false
   action.play()
-
-  schedulePreFade()
 
   setTimeout(() => {
     const stage = document.getElementById("container3D")

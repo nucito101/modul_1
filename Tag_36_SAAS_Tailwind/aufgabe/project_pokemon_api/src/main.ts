@@ -1,14 +1,21 @@
+import "./animation/animation.js"
 import CryGenerator from "./sound/CryGenerator"
 import { CRY_TYPES } from "./sound/data/cryTypes"
 import pokemonList from "./sound/data/pokemonList"
 import "./style.css"
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    hideLoader()
+  }, 500)
+})
 
 const POKEMON_URL = "https://pokeapi.co/api/v2/pokemon"
 const TYPE_URL = "https://pokeapi.co/api/v2/type"
 const GIF_URL = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${id}.gif`
 const GIF_BLACK_URL = (id: number) =>
-  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/${id}.gif`
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
 
 const LIMIT = 151
 const POKEMON_URL_WITH_LIMIT = `https://pokeapi.co/api/v2/pokemon?limit=${LIMIT}&offset=0`
@@ -176,7 +183,7 @@ async function render() {
       return `
         <li class="bg-card border border-[#e5eef5] rounded p-2 grid gap-1.5">
           <div class="grid place-items-center aspect-square rounded-[10px] bg-gradient-to-b from-white to-[#f6f9fc]">
-          <img src="${GIF_URL(
+          <img src="${GIF_BLACK_URL(
             id
           )}" alt="${name}" class="pokemon-img w-[100px] h-[100px] object-contain cursor-pointer" data-pokemon="${
         detail.name
@@ -281,3 +288,13 @@ grid.addEventListener("click", (e) => {
 setupTypeBtn()
 search()
 loadBasics()
+
+function hideLoader(): void {
+  const loader = document.getElementById("loader-wrapper") as HTMLDivElement
+  const container = document.getElementById("container3D") as HTMLDivElement
+
+  if (loader && container) {
+    loader.style.display = "none"
+    container.style.display = "block"
+  }
+}
