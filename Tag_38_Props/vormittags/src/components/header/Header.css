@@ -1,0 +1,10 @@
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+}
+
+header {
+  margin: 25px 5vw 100px 5vw;
+}

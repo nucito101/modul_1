@@ -1,0 +1,21 @@
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  margin: 0 5vw 50px 5vw;
+}
+
+.intro div,
+.intro img {
+  width: 50%;
+}
+
+.intro h2,
+.intro p {
+  margin-bottom: 30px;
+}
+
+.spiegelverkehrt {
+  flex-direction: row-reverse;
+}
