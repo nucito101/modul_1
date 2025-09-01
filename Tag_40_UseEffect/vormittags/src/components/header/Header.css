@@ -1,0 +1,48 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5vw;
+}
+
+header nav {
+  display: flex;
+  gap: 4vw;
+}
+
+header svg {
+  cursor: pointer;
+}
+
+.cart {
+  background-color: rgb(221, 221, 221);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-icon .num {
+  background: black;
+  color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 10px;
+}
