@@ -1,7 +1,7 @@
 type ResultProps = {
   celsius: number | ""
   fahrenheit: number | ""
-  comfyGifSrc?: string
+  GifSrc?: string
 }
 
 const BOIL_C = 100
@@ -10,7 +10,7 @@ const COMFY_MAX_C = 30
 const EPS = 0.5
 const COMFY_GIF = "/Hello_how_are_you_I_am_under_the_water.gif"
 
-export default function Result({ celsius, fahrenheit, comfyGifSrc }: ResultProps) {
+export default function Result({ celsius, fahrenheit, GifSrc }: ResultProps) {
   if (celsius === "" || fahrenheit === "") return null
 
   const isBoiling = Math.abs(celsius - BOIL_C) <= EPS || celsius > BOIL_C
@@ -23,7 +23,7 @@ export default function Result({ celsius, fahrenheit, comfyGifSrc }: ResultProps
       {isComfy && (
         <div className="flex items-center gap-3">
           <img
-            src={comfyGifSrc || COMFY_GIF}
+            src={GifSrc || COMFY_GIF}
             alt="Hello, how are you? I am under the water"
             className="h-full w-full rounded-md object-cover"
           />
