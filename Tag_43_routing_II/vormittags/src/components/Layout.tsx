@@ -1,0 +1,14 @@
+import { Outlet } from "react-router"
+import Header from "./Header"
+
+export default function Layout() {
+  return (
+    <div>
+      <Header />
+      <main>
+        {/* Im Outlet werden Child-Routen gerendert */}
+        <Outlet />
+      </main>
+    </div>
+  )
+}

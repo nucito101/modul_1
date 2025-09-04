@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with React Router",
+    "slug": "getting-started-with-react-router",
+    "content": "An introduction to React Router: how to install it, set up basic routes, and navigate between pages in a single-page application. Includes simple examples and best practices for beginners."
+  },
+  {
+    "id": 2,
+    "title": "Nested Routes and Layouts",
+    "slug": "nested-routes-and-layouts",
+    "content": "Explains nested routing patterns, route layouts, and how to compose complex UIs using parent and child routes. Covers outlet usage and layout components for consistent page structure."
+  },
+  {
+    "id": 3,
+    "title": "Route Parameters and Data Loading",
+    "slug": "route-parameters-and-data-loading",
+    "content": "Covers dynamic route parameters, reading params inside components, and strategies for fetching data per route. Shows examples with useParams, useLoader, and handling loading/error states."
+  },
+  {
+    "id": 4,
+    "title": "Protected Routes and Authentication",
+    "slug": "protected-routes-and-authentication",
+    "content": "Describes how to protect routes behind authentication, create private route wrappers, and redirect unauthorized users. Includes patterns for storing auth state and persisting sessions."
+  },
+  {
+    "id": 5,
+    "title": "Performance Tips for Routing",
+    "slug": "performance-tips-for-routing",
+    "content": "Practical tips to improve routing performance: code-splitting route components, prefetching data, optimizing route matching, and minimizing re-renders when switching routes."
+  }
+]
