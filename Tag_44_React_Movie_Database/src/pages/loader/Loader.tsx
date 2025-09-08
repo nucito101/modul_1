@@ -2,10 +2,10 @@ import React from "react"
 import "./Loader.css"
 
 export default function Loader({
-  letter = "S",
+  letter = "F",
   className = "w-screen h-screen flex items-center justify-center bg-black overflow-hidden",
 }: {
-  letter?: "N" | "S" | "T" | "F" | "L" | "I" | "X"
+  letter?: "F"
   className?: string
 }) {
   const furs = Array.from({ length: 31 }, (_, i) => i + 1)
@@ -34,8 +34,6 @@ export default function Loader({
           <Brush />
           <Lumieres />
         </div>
-
-        {/* helper-2..4 only brush, like original */}
         <div className="helper-2">
           <Brush />
         </div>
