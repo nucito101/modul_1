@@ -15,11 +15,21 @@
   --font-banny: Banny, sans-serif;
   --color-t-accent: #ffffff80; /* 50% */
   --color-t-accent-2: #ffffffe5; /* 90% */
+  --color-t-accent-3: #ffffff33; /* 20% */
   --color-background: #000000e6;
   --color-bg-accent: #e8c300;
 }
 
-/* small text-xs 12px
-normal text-sm 14px
-accent text-lg 18px
-section text-4xl 36px */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply text-t-accent font-opensans;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply text-t-accent-2 font-banny;
+  }
+}

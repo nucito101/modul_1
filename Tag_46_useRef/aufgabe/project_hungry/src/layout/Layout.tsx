@@ -5,11 +5,13 @@ import Footer from "../components/footer/Footer"
 export default function Layout() {
   return (
     <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <div className="overflow-x-hidden max-w-screen">
+        <Header />
+        <main id="main">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }
