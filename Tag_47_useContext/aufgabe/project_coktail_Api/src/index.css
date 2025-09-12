@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@theme {
+  --color-text: #6f3e3e;
+  --color-accent: #744546;
+  --color-accent-80: #744546cc;
+  --color-border: #bb9773;
+  --color-border-80: #bb9773cc;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth bg-[#ede1c7];
+  }
+  body {
+    @apply text-[#6f3e3e];
+  }
+}
+
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    scrollbar-width: none; /* Firefox */
+  }
+}
