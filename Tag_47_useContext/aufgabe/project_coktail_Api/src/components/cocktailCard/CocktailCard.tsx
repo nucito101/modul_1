@@ -26,16 +26,6 @@ export default function CocktailCard({ item }: Props) {
         className="transition-transform duration-200 group-hover:scale-[1.05]"
       />
       <CardHeader title={item.name} className="mt-4 text-text font-thin!" />
-      {/* <CardContent>
-        {" "}
-        <CardActions align="between">
-          <Button
-            onClick={() => setSelectedId(item.id)}
-            size="xs"
-            variant="ghost"
-            className="p-0! bg-transparent! cursor-pointer px-1! hover:border-b rounded-none! text-accent-80!"></Button>
-        </CardActions>
-      </CardContent> */}
     </Card>
   )
 }

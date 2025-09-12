@@ -1,4 +1,3 @@
-// src/context/CocktailsContext.tsx
 import React, { createContext, useContext, useEffect, useState } from "react"
 import type { CocktailDetail, CocktailLite } from "../types/Types"
 import {
@@ -65,9 +64,8 @@ export function CocktailsProvider({ children }: { children: React.ReactNode }) {
   const [detailLoading, setDetailLoading] = useState(false)
   const [detailError, setDetailError] = useState<string | null>(null)
 
-  // ---------------------------------------
-  // Initial: Kategorien & Alcoholic-Optionen
-  // ---------------------------------------
+  // Initial: Kategorien & Alcoholic
+
   useEffect(() => {
     let ignore = false
     ;(async () => {
@@ -86,9 +84,7 @@ export function CocktailsProvider({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
-  // ---------------------------------------
-  // Manuelle Suche (wird nur aufgerufen bei Enter oder Button)
-  // ---------------------------------------
+  // Manuelle Suche
   useEffect(() => {
     ;(async () => {
       setLoading(true)
@@ -111,9 +107,7 @@ export function CocktailsProvider({ children }: { children: React.ReactNode }) {
     })()
   }, [query, category, alcoholic])
 
-  // ---------------------------------------
   // Detail nachladen, wenn selectedId gesetzt
-  // ---------------------------------------
   useEffect(() => {
     if (!selectedId) {
       setDetail(null)
